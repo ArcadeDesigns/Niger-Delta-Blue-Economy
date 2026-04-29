@@ -49,7 +49,7 @@ export default function Navbar() {
             className={`NavlinkItem ${isAboutActive ? "active" : ""}`}
             href="#about"
           >
-            About Summit
+            The Summit
           </a>
 
           <a
@@ -67,6 +67,7 @@ export default function Navbar() {
           </a>
         </div>
 
+        {/*
         <div className="Navlink-Right">
           <a
             className={`NavlinkItem ${isLeadershipActive ? "active" : ""}`}
@@ -84,6 +85,7 @@ export default function Navbar() {
             Contact Us
           </a>
         </div>
+        */}
       </nav>
 
       {/* Mobile Nav */}
@@ -92,7 +94,7 @@ export default function Navbar() {
           <img src={Logo} alt="Blue Economy Logo" />
         </Link>
 
-       <div className="ResponsiveNavigationControl" onClick={toggleMenu}>
+        <div className="ResponsiveNavigationControl" onClick={toggleMenu}>
           <p>Menu</p>
           <span className="material-symbols-outlined">
             {menuOpen ? "close" : "menu"}
@@ -110,7 +112,7 @@ export default function Navbar() {
 
           <li>
             <a href="#about" onClick={closeMenu}>
-              About The Summit
+              The Summit
             </a>
           </li>
 
@@ -126,6 +128,7 @@ export default function Navbar() {
             </a>
           </li>
 
+          {/*
           <li>
             <a href="#leadership" onClick={closeMenu}>
               Leadership
@@ -142,6 +145,7 @@ export default function Navbar() {
               Contact Us
             </a>
           </li>
+         */}
         </div>
       </ul>
     </>
