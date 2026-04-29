@@ -44,6 +44,13 @@ import SpecialGuest2 from "../assets/SpecialGuest2.jpg";
 import SpecialGuest3 from "../assets/SpecialGuest3.jpg";
 import SpecialGuest4 from "../assets/SpecialGuest4.jpg";
 
+import FisheriesAquaculture from "../assets/FisheriesAquaculture.jpg";
+import MaritimeTransportLogistics from "../assets/MaritimeTransportLogistics.jpg";
+import CoastalTourism from "../assets/CoastalTourism.jpg";
+import RenewableEnergy from "../assets/RenewableEnergy.jpg";
+import OilGasTransformation from "../assets/OilGasTransformation.jpg";
+import ClimateEnvironmentalSustainability from "../assets/ClimateEnvironmentalSustainability.jpg";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, Flip);
 
 const SLIDER_SHIFT_PX = -210;
@@ -94,37 +101,31 @@ const industries = [
     title: "Fisheries & Aquaculture",
     description:
       "Advancing sustainable fisheries and aquaculture systems to meet Africa’s rising seafood demand while generating employment, improving food security, and supporting coastal livelihoods.",
-    link: "/technology",
   },
   {
     title: "Maritime Transport & Logistics",
     description:
       "Enhancing port infrastructure, shipping systems, and inland waterways to improve trade efficiency, regional connectivity, and economic competitiveness across Nigeria and West Africa.",
-    link: "/logistics",
   },
   {
     title: "Coastal Tourism",
     description:
       "Unlocking the immense potential of coastal and marine tourism to drive economic diversification, attract global investment, and create millions of sustainable jobs by 2030.",
-    link: "/consulting-services",
   },
   {
     title: "Renewable Energy",
     description:
       "Harnessing offshore wind, tidal, and other ocean-based energy sources to power sustainable development, reduce carbon emissions, and strengthen energy security.",
-    link: "/government-contracting",
   },
   {
     title: "Oil & Gas Transformation",
     description:
       "Driving innovation, efficiency, and environmental responsibility in the oil and gas sector while aligning with global sustainability and energy transition goals.",
-    link: "/government-contracting",
   },
   {
     title: "Climate & Environmental Sustainability",
     description:
       "Protecting marine ecosystems, coastlines, and biodiversity through climate resilience strategies, conservation initiatives, and sustainable resource management.",
-    link: "/government-contracting",
   },
 ];
 
@@ -183,18 +184,12 @@ const strategicItems = [
 ];
 
 const industryImages = [
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1761872178/QuinnDaisies/51152_qph8bp.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925889/QuinnDaisies/1200_kzmwos.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/40197_qxydbd.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/788_bvaktx.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/130026_ugj9sx.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/2149636270_sl8t0l.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821788/QuinnDaisies/9354_mciahj.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821787/QuinnDaisies/119368_gohgon.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821787/QuinnDaisies/122602_pvkxns.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775774109/QuinnDaisies/2151977495_ctlifz.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775926162/QuinnDaisies/2150010125_xjn6j3.jpg",
-  "https://res.cloudinary.com/renaissance-images/image/upload/v1775926156/QuinnDaisies/126832_wkpqdn.jpg",
+  FisheriesAquaculture,
+  MaritimeTransportLogistics,
+  CoastalTourism,
+  RenewableEnergy,
+  OilGasTransformation,
+  ClimateEnvironmentalSustainability
 ];
 
 const industrySlides = industries.map((item, index) => ({
@@ -817,18 +812,6 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="Container ServiceContainer">
-              <h2 className="ServiceText">
-                At Quinn Daisies, we provide a comprehensive range of
-                professional services designed to help organizations solve
-                complex challenges, strengthen operations, and achieve
-                sustainable success. From technology and logistics to
-                consulting, workforce solutions, business development, and
-                digital innovation, our services are tailored to deliver
-                measurable value and long-term impact.
-              </h2>
-            </section>
-
             <section
               className="White-Background ApplicationImageDesign"
               ref={imagePinRef}
@@ -866,13 +849,6 @@ export default function Home() {
                           <p className="ApplicationChartContentContainerContentText">
                             {item.description}
                           </p>
-
-                          <Link to={item.link} className="ApplicationButton">
-                            <p>{item.title}</p>
-                            <span className="material-symbols-outlined">
-                              arrow_outward
-                            </span>
-                          </Link>
                         </div>
                       </div>
                     </div>
