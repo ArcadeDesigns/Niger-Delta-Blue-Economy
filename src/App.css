@@ -1,0 +1,2460 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+  --primary-color: #ffffff;
+  --primary-on-color: #808080;
+  --secondary-color: #000000;
+  --secondary-on-color: #424242;
+  --tertiary-color: #00a0bd;
+  --tertiary-on-color: #000e2b;
+  --text-color: #1e1e1e;
+  --text-on-color: #3b3b3b;
+
+  /*variables Text*/
+  --mega-header: 5em;
+  --mini-header: 4em;
+  --header: 3em;
+  --mega-text: 2em;
+  --mini-text: 1.4em;
+  --medium-text: 1.2em;
+  --text: 0.9em;
+  --span-text: 0.8em;
+  --link-span-text: 0.65em;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+  position: relative;
+  width: 100%;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  display: block;
+  place-items: revert;
+  background-color: var(--secondary-color);
+}
+
+.hr {
+  width: 100%;
+  height: 3px;
+  border-radius: 25px;
+  margin-bottom: 5%;
+  background-color: var(--tertiary-color);
+}
+
+h1 {
+  font-size: var(--header);
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+h1 span {
+  font-weight: 550;
+}
+
+h2 {
+  font-size: var(--mega-text);
+  line-height: 1.6em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: var(--mini-text);
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: var(--medium-text);
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: var(--text);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: var(--text);
+  line-height: 30px;
+}
+
+.ApplicationCtn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sectionBox {
+  width: 100%;
+  gap: 5em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 20px 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+nav .Navlink-Left {
+  width: max-content;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto 0;
+  gap: 0.5em;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.8px);
+  -webkit-backdrop-filter: blur(3.8px);
+  border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+nav .Navlink-Left .NavlinkItem.active {
+  background-color: var(--primary-color);
+  width: max-content;
+  height: auto;
+  border-radius: 50px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+nav .Navlink-Left:hover .NavlinkItem:hover {
+  width: max-content;
+  height: auto;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.8px);
+  -webkit-backdrop-filter: blur(3.8px);
+}
+
+nav .Navlink-Left:hover .NavlinkItem:hover {
+  color: var(--primary-color);
+}
+
+nav .Navlink-Right {
+  width: max-content;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto 0;
+  gap: 0.5em;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.8px);
+  -webkit-backdrop-filter: blur(3.8px);
+  border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+nav .Navlink-Right .NavlinkItem.active {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  width: max-content;
+  height: auto;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+nav .Navlink-Right:hover .NavlinkItem:hover {
+  width: max-content;
+  height: auto;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.8px);
+  -webkit-backdrop-filter: blur(3.8px);
+}
+
+nav .Navlink-Right:hover .NavlinkItem:hover a {
+  color: var(--primary-color);
+}
+
+.Navbar-Logo {
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  display: flex;
+}
+
+.Navbar-Logo img {
+  width: 80px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.ApplicationFooterBox {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: auto;
+  display: flex;
+}
+
+.ApplicationFooterBox .Logo img {
+  width: 80px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+nav .NavlinkItem {
+  list-style: none;
+  padding: 15px 25px;
+}
+
+nav .NavlinkItem {
+  color: var(--primary-color);
+  font-size: var(--text);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.Container {
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Dark-Background {
+  background-color: var(--secondary-color);
+}
+
+.White-Background {
+  background-color: var(--primary-color);
+}
+
+.Gap-XL {
+  gap: 4em;
+}
+
+.Gap-L {
+  gap: 2em;
+}
+
+.Gap-SM {
+  gap: 1em;
+}
+
+.Flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+.SectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SectionHeader h2 {
+  width: 35%;
+  color: var(--tertiary-color);
+  align-items: center;
+  text-align: center;
+}
+
+.HeroContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.HeroContainer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.HeroContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.HeroOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto 0;
+  padding: 5% 10%;
+  gap: 2em;
+}
+
+.HeroOverlayContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto 0;
+  gap: 1.5em;
+}
+
+.HeroOverlayContent h1 {
+  color: var(--primary-color);
+}
+
+.HeroOverlayContent span {
+  color: var(--tertiary-color);
+  font-weight: 500;
+}
+
+.HeroOverlayContent p {
+  color: var(--primary-color);
+}
+
+.HeroIndustrySlider {
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.HeroIndustrySliderContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.HeroIndustrySliderContainerItem {
+  min-width: 200px;
+  height: 150px;
+  padding: 25px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.HeroIndustrySliderContainerItem img {
+  width: 80px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.HeroIndustrySliderContainerItem p {
+  font-size: var(--link-span-text);
+  color: var(--tertiary-color);
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-new {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+.exit-slide-out {
+  animation: slide-out-left 0.5s forwards;
+}
+
+.enter-slide-in {
+  animation: slide-in-right 0.5s forwards;
+}
+
+.Navbar {
+  width: 80%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5% 1%;
+  margin: auto;
+  position: absolute;
+  z-index: 1000;
+  top: 0.2%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  animation: NavbarAnimationOne 2s;
+}
+
+.Navbar.Scroll {
+  background-color: var(--tertiary-on-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border-radius: 0px;
+  padding: 2.5% 10%;
+  animation: NavbarAnimation 2s;
+}
+
+@keyframes NavbarAnimationOne {
+  0% {
+    top: -5%;
+  }
+  100% {
+    top: 0.2%;
+  }
+}
+
+@keyframes NavbarAnimation {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.Logo {
+  width: auto;
+  height: auto;
+}
+
+.Logo img {
+  width: 50px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.NavLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.NavLink .Cta {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 25px;
+}
+
+.NavLink .Cta:hover {
+  color: var(--tertiary-color);
+}
+
+.NavLink .Cta.active {
+  background-color: var(--tertiary-on-color);
+  border-radius: 25px;
+  color: var(--tertiary-color);
+}
+
+.Navbar.Scroll .NavLink .Cta.active {
+  background-color: var(--tertiary-color);
+  border-radius: 25px;
+  color: var(--tertiary-on-color);
+}
+
+.Button .Cta {
+  height: 65px;
+  border-radius: 25px;
+  background-color: var(--tertiary-color);
+  display: flex;
+  width: 200px;
+  gap: 0.8em;
+  text-decoration: none;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.Button .Cta p {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  padding-right: 15%;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+}
+
+.Button .Cta span {
+  background-color: var(--tertiary-on-color);
+  color: var(--tertiary-color);
+  padding: 15px;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: 70%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Button .Cta:hover p {
+  padding-right: 20px;
+  padding-left: 35%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Button .Cta:hover span {
+  left: 2%;
+  transition: all 0.5s ease-in-out;
+  margin-left: 1%;
+}
+
+.ApplicationContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.ApplicationBox {
+  padding: 25px;
+  width: 100%;
+  margin: auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--tertiary-on-color);
+  border-radius: 25px;
+  gap: 1em;
+  will-change: transform;
+}
+
+.ApplicationBox img {
+  width: 50px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.ApplicationIcon {
+  color: var(--primary-color);
+  font-size: var(--mega-text);
+  width: max-content;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tertiary-color);
+}
+
+.ApplicationDescription {
+  text-align: center;
+  font-size: var(--text);
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.ApplicationBox h3 {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.ApplicationBox:nth-child(1) {
+  transform: translateY(-75px);
+}
+
+.ApplicationBox:nth-child(2) {
+  transform: translateY(0px);
+}
+
+.ApplicationBox:nth-child(3) {
+  transform: translateY(75px);
+}
+
+.ApplicationBox:nth-child(4) {
+  transform: translateY(150px);
+}
+
+.ApplicationCarouselSlide {
+  overflow-x: scroll;
+}
+
+.ApplicationCarouselSlide::-webkit-scrollbar {
+  display: none;
+}
+
+.ApplicationCarouselSlideBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.ApplicationButton {
+  height: 70px;
+  border-radius: 25px;
+  background-color: var(--tertiary-color);
+  display: flex;
+  width: 320px;
+  gap: 0.8em;
+  text-decoration: none;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.ApplicationButton p {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  padding-right: 15%;
+  margin-bottom: 0px;
+  padding-left: 15px;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+}
+
+.ApplicationButton span {
+  background-color: var(--tertiary-on-color);
+  color: var(--tertiary-color);
+  padding: 15px;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: 80%;
+  transition: all 0.5s ease-in-out;
+}
+
+.ApplicationButton:hover p {
+  padding-right: 15px;
+  padding-left: 25%;
+  transition: all 0.5s ease-in-out;
+}
+
+.ApplicationButton:hover span {
+  left: 2%;
+  transition: all 0.5s ease-in-out;
+  margin-left: 1%;
+}
+
+.Footer {
+  background-color: var(--tertiary-on-color);
+}
+
+.ApplicationFooter {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5em;
+  margin: auto;
+  padding: 5% 10%;
+}
+
+.ApplicationFooterBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.ApplicationFooterBoxLink {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.ApplicationFooterBoxLink p {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  margin-bottom: 0px;
+}
+
+.ApplicationFlex {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 4em;
+}
+
+.ApplicationFooterBox:nth-child(1) {
+  width: 100%;
+  min-width: 500px;
+}
+
+.ApplicationFooterBoxSocial {
+  gap: 1em;
+  display: flex;
+}
+
+.ApplicationFooterBoxSocial .Cta {
+  background-color: var(--tertiary-color);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.ApplicationFooterBoxSocial .Cta img {
+  width: 25px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.ApplicationFooterBox h4 {
+  color: var(--primary-color);
+}
+
+.ApplicationFooterBoxLink .Cta {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.ApplicationFooterBottom {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ApplicationFooterBoxBottomLink {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1em;
+}
+
+.ApplicationFooterBoxBottomLink .Cta {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.ApplicationFooterBottom p {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: right;
+}
+
+.ApplicationBanner {
+  width: 100%;
+  height: auto;
+  border-radius: 35px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.ApplicationBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ApplicationBannerOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ApplicationBanner h2 {
+  color: var(--tertiary-color);
+  max-width: 40%;
+  text-align: center;
+}
+
+.ApplicationBanner .ApplicationText {
+  color: var(--primary-color);
+  max-width: 40%;
+  text-align: center;
+}
+
+.ApplicationChartDesignItem {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
+#CarouselAnimation {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ApplicationCarousel {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.ApplicationCarouselFlex {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  padding: 5% 10% 0 10%;
+}
+
+.ApplicationCarouselFlex h2 {
+  width: 25%;
+  color: var(--tertiary-color);
+}
+
+.ApplicationCarouselContainer {
+  width: 45%;
+  height: auto;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.ApplicationCarouselContainer .ApplicationCarouselContainerText {
+  text-align: right;
+  color: var(--secondary-color);
+}
+
+#CarouselAnimation {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ApplicationCarouselViewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ApplicationCarouselSlide {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 1em;
+  width: max-content;
+  padding: 0 10% 5% 10%;
+  will-change: transform;
+}
+
+.ApplicationCarouselSlideBox,
+.ApplicationCarouselSlideBoxImage {
+  flex: 0 0 auto;
+}
+
+.ApplicationCarouselSlideBox {
+  width: 450px;
+  min-width: 450px;
+  height: 450px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 35px;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: var(--tertiary-on-color);
+}
+
+.ApplicationCarouselSlideBoxContent {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ApplicationCarouselSlideBoxImage {
+  width: 800px;
+  min-width: 800px;
+  height: 500px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 35px;
+  background-color: var(--tertiary-color);
+}
+
+.ApplicationCarouselSlideBoxImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ApplicationCarouselSlideBox h4 {
+  color: var(--primary-color);
+}
+
+.ApplicationCarouselSlideBox p {
+  color: var(--primary-color);
+  text-align: right;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.SectionColorHeader {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+}
+
+.SectionColorHeader span {
+  gap: 1em;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: var(--link-span-text);
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-on-color);
+}
+
+.SectionColorHeader h2 {
+  width: 45%;
+  color: var(--tertiary-color);
+}
+
+.SectionColorHeader p {
+  width: 50%;
+  color: var(--secondary-color);
+}
+
+.SectionFlex {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.SectionBoxSmall {
+  gap: 1em;
+  width: 600px;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--tertiary-on-color);
+}
+
+.SectionBoxSmall h2 {
+  color: var(--tertiary-color);
+}
+
+.SectionBoxSmall p {
+  color: var(--primary-color);
+}
+
+.SectionBoxSmall img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.SectionBoxLarge {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.SectionBoxLarge img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.SectionBoxSmall:first-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.SectionBoxSmall:last-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: auto;
+}
+
+.ApplicationBoxSmall {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto 0;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: var(--tertiary-on-color);
+}
+
+.ApplicationBoxSmall h4 {
+  color: var(--tertiary-color);
+}
+
+.ApplicationBoxSmall p {
+  color: var(--primary-color);
+}
+
+.ApplicationBoxSmall img {
+  width: 40px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.ApplicationFlexImageBox {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.ApplicationFlexImageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ApplicationFlexWidth {
+  width: 100%;
+  min-width: 50%;
+}
+
+.ApplicationSectionColorHeader {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+}
+
+.ApplicationSectionColorHeader span {
+  gap: 1em;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: var(--link-span-text);
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-on-color);
+}
+
+.ApplicationSectionColorHeader h2 {
+  color: var(--tertiary-color);
+}
+
+.ApplicationSectionColorHeader p {
+  color: var(--secondary-color);
+}
+
+.ApplicationImageDesign {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 8% 10% !important;
+}
+
+.ApplicationChartContentListContainer {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.ApplicationChartContentListContainer .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--tertiary-color);
+  transform-origin: top center;
+  height: auto;
+}
+
+.ApplicationChartContentListHeader {
+  width: 60%;
+  color: var(--tertiary-color);
+  margin-bottom: 10%;
+}
+
+.ApplicationChartContentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  padding-left: 25px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ApplicationChartDesignItem {
+  width: 100%;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+}
+
+.ApplicationChartDesignItem h4 {
+  color: var(--tertiary-color);
+  transition: color 0.25s ease;
+}
+
+.ApplicationChartDesignItem p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.35rem;
+  max-width: 32ch;
+}
+
+.ApplicationChartDesignItem.is-active {
+  opacity: 1;
+}
+
+.ApplicationChartDesignItem.is-active h4 {
+  color: var(--tertiary-color);
+}
+
+.ApplicationChartContent {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ApplicationChartSlides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ApplicationChartSlide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ApplicationChartContentContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50px;
+  position: relative;
+}
+
+.ApplicationChartContentContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ApplicationChartContentContainerContent {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 25px 10px;
+}
+
+.ApplicationChartContentContainerContent
+  .ApplicationChartContentContainerContentText {
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+.OverwriteHeroOverlayFlex {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column !important;
+}
+
+.ServiceHeroContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ServiceHeroContent h1 {
+  color: var(--tertiary-color);
+  text-align: center;
+  width: 50%;
+}
+
+.ServiceHeroContent .ServiceHeroContentText {
+  color: var(--primary-color);
+  text-align: center;
+  width: 60%;
+}
+
+.PartnerBoxContainer {
+  gap: 3em;
+  width: 100%;
+  max-width: 30%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.PartnerBoxContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.PartnerBox {
+  gap: 0.5em;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.PartnerBox img {
+  width: 40px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.PartnerBox:nth-child(1) img {
+  width: 80px;
+}
+
+.PartnerBox:nth-child(5) img {
+  width: 35px;
+}
+
+.PartnerBox:nth-child(6) img {
+  width: 65px;
+}
+
+.PartnerBox:nth-child(7) img {
+  width: 35px;
+}
+
+.PartnerBox p {
+  color: var(--primary-color);
+  margin-bottom: 0px;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.ServiceContainer {
+  width: 100%;
+  height: 60vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ServiceText {
+  opacity: 0;
+  text-align: center;
+  color: rgb(14, 16, 15);
+  font-size: 2rem;
+  will-change: transform;
+  color: var(--primary-color);
+  line-height: 70px;
+}
+
+.ServiceText * {
+  will-change: transform;
+}
+
+.ServiceList {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ServiceList h3 {
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+.ServiceList .ServiceListText {
+  color: var(--primary-color);
+  text-align: center;
+  width: 50%;
+}
+
+.ServiceListBox {
+  gap: 2em;
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  display: flex;
+  border-radius: 50px;
+  background-color: var(--tertiary-on-color);
+}
+
+.ServiceListBox img {
+  width: 600px;
+  height: 400px;
+  min-width: 600px;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.ServiceListBoxContent {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.ServiceListBoxContent h4 {
+  color: var(--tertiary-color);
+  line-height: 35px;
+}
+
+.ServiceListBoxContent .ServiceListBoxContentText {
+  color: var(--primary-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.serviceSection {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ServiceListBoxContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  position: relative;
+}
+
+.ServicePosition {
+  position: relative;
+}
+
+.ServicesInformation {
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+
+.ServicesInformation span {
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 50px;
+  color: var(--tertiary-color);
+  font-size: var(--link-span-text);
+  background-color: var(--tertiary-on-color);
+}
+
+.ServicesInformation h4 {
+  width: 50%;
+  line-height: 35px;
+  color: var(--tertiary-color);
+}
+
+.ServicesInformation .ServicesInformationBottomText {
+  color: var(--primary-color);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.ServicesInformationBoxContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: auto;
+}
+
+.ServicesInformationBox {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: var(--primary-color);
+}
+
+.ServicesInformationBoxHeader {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+}
+
+.ServicesInformationBoxHeader h6 {
+  color: var(--tertiary-color);
+  line-height: 25px;
+  width: 100%;
+  max-width: 25%;
+}
+
+.ServicesInformationBoxHeader p {
+  color: var(--secondary-color);
+  line-height: 25px;
+  width: 100%;
+  max-width: 60%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.ServicesInformationBox h3 {
+  font-size: var(--header);
+  color: var(--tertiary-color);
+  display: none;
+}
+
+.ServicesInformationBox text {
+  font-size: var(--span-text);
+  font-weight: 500;
+}
+
+.ServicesInformationBox:first-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: var(--tertiary-on-color);
+}
+
+.ServicesInformationBox:first-child .ServicesInformationBoxHeader {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+}
+
+.ServicesInformationBox:first-child .ServicesInformationBoxHeader h6 {
+  color: var(--tertiary-color);
+  line-height: 25px;
+  width: 100%;
+  max-width: 25%;
+}
+
+.ServicesInformationBox:first-child .ServicesInformationBoxHeader p {
+  color: var(--primary-color);
+  line-height: 25px;
+  width: 100%;
+  max-width: 60%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.ServiceGallerySection {
+  position: relative;
+}
+
+.ServiceGalleryWrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ServiceGallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: none;
+}
+
+.ServiceGalleryItem {
+  position: relative;
+  overflow: hidden;
+  will-change: transform, width, height;
+}
+
+.ServiceGalleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ServiceGalleryBento {
+  display: grid;
+  gap: 1vh;
+  grid-template-columns: repeat(3, 32.5vw);
+  grid-template-rows: repeat(4, 23vh);
+  justify-content: center;
+  align-content: center;
+}
+
+.ServiceGalleryFinal.ServiceGalleryBento {
+  grid-template-columns: repeat(3, 100vw);
+  grid-template-rows: repeat(4, 49.5vh);
+  gap: 1vh;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(1) {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(3) {
+  grid-area: 2 / 2 / 4 / 3;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(4) {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(5) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(6) {
+  grid-area: 3 / 3 / 5 / 4;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(7) {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.ServiceGalleryBento .ServiceGalleryItem:nth-child(8) {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.ServiceApproach {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.ServiceApproachHeader {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  height: auto;
+}
+
+.ServiceApproach p {
+  color: var(--primary-color);
+  width: 25%;
+}
+
+.ServiceApproachHeader h2 {
+  color: var(--tertiary-color);
+}
+
+.ServiceApproachHeader span {
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 50px;
+  color: var(--tertiary-color);
+  font-size: var(--link-span-text);
+  background-color: var(--tertiary-on-color);
+}
+
+.ServiceApproachContainer {
+  gap: 1em;
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.ServiceApproachContainerContent {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.ServiceApproachContainerContent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ServiceApproachContainerContentOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ServiceApproachContainerContentOverlay h3 {
+  color: var(--tertiary-color);
+}
+
+.ServiceApproachContainerContentOverlay p {
+  color: var(--primary-color);
+}
+
+.ServiceApproachContainerContentRight {
+  width: 50%;
+  height: 100%;
+  padding: 5%;
+  border-radius: 25px;
+  background-color: var(--tertiary-on-color);
+}
+
+.ServiceApproachContainerContentRight h5 {
+  color: var(--tertiary-color);
+  line-height: 35px !important;
+}
+
+.ServiceApproachContainerContentRight p {
+  color: var(--primary-color);
+}
+
+.serviceBanner {
+  padding: 5% 10%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceBannerSection {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 1em;
+}
+
+.serviceBannerSection .spanText {
+  padding: 5px 15px;
+  width: max-content;
+  border-radius: 50px;
+  color: var(--tertiary-color);
+  font-size: var(--link-span-text);
+  background-color: var(--tertiary-on-color);
+}
+
+.serviceBannerSection h2 {
+  color: var(--tertiary-color);
+  width: 50%;
+}
+
+.serviceBannerSection .paragraphText {
+  color: var(--primary-color);
+}
+
+.serviceBannerSection .linkText {
+  color: var(--tertiary-color);
+  text-decoration: none;
+  font-size: var(--text);
+}
+
+.serviceBannerSectionImages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 5%;
+}
+
+.serviceBannerSectionImages img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  border-radius: 50px;
+}
+
+.serviceBannerSectionImagesBox {
+  width: auto;
+  height: auto;
+  padding: 25px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: var(--secondary-on-color);
+  display: flex;
+  border: 10px solid var(--secondary-color);
+  gap: 2em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.serviceBannerSectionImagesBox:first-child {
+  top: 5%;
+  left: 5%;
+}
+
+.serviceBannerSectionImagesBox:last-child {
+  right: -5%;
+  bottom: 5%;
+  width: 300px !important;
+  flex-direction: column;
+}
+
+.serviceBannerSectionImagesBoxContent {
+  width: 100%;
+  height: auto;
+}
+
+.serviceBannerSectionImagesBoxContent h5 {
+  color: var(--tertiary-color);
+  font-size: var(--mega-text);
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.serviceBannerSectionImagesBoxContent p {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: var(--primary-color);
+  font-size: var(--span-text);
+}
+
+.serviceBannerSectionImagesBox span {
+  padding: 15px;
+  width: max-content;
+  border-radius: 15px;
+  color: var(--tertiary-color);
+  font-size: var(--medium-text);
+  background-color: var(--tertiary-on-color);
+}
+
+.serviceBannerSectionImagesBoxContentRight {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+  gap: 1em;
+}
+
+.serviceBannerSectionImagesBoxContentRight h5 {
+  font-size: var(--span-text);
+  line-height: 20px;
+  color: var(--tertiary-color);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.serviceBannerSectionImagesBox .contentRight {
+  font-size: var(--span-text);
+  line-height: 20px;
+  color: var(--primary-color);
+}
+
+.AboutHero {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AboutHero h1 {
+  width: 55%;
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+.AboutHero .AboutText {
+  color: var(--primary-color);
+  width: 40%;
+  text-align: center;
+}
+
+.AboutHeroNavigation {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.AboutHeroNavigation p {
+  font-size: var(--span-text);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.HeroHeaderNavigation {
+  color: var(--tertiary-color) !important;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.HeroHeaderNavigation:hover {
+  color: var(--tertiary-on-color);
+}
+
+.AboutPillars {
+  gap: 1em;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 5% 0;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.AboutPillars img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.AboutContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ResponsiveNavigation {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1280px) {
+  h1 {
+    font-size: var(--mini-text) !important;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: var(--medium-text) !important;
+  }
+
+  h3 {
+    font-size: var(--text) !important;
+  }
+
+  h4 {
+    font-size: var(--text) !important;
+  }
+
+  p {
+    font-size: var(--span-text) !important;
+  }
+
+  .ApplicationImageDesign {
+    padding: 10% 5% !important;
+  }
+
+  .HeroOverlay {
+    flex-direction: column;
+    gap: 0;
+    padding: 5%;
+  }
+
+  .HeroOverlayContent {
+    width: 50%;
+  }
+
+  .HeroIndustrySlider {
+    height: 40%;
+    margin: 0;
+  }
+
+  .HeroIndustrySliderContainerItem {
+    height: 120px;
+    padding: 25px 10px;
+  }
+
+  .HeroIndustrySliderContainerItem img {
+    height: 40px;
+  }
+
+  .ResponsiveNavigation {
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: var(--tertiary-on-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+  }
+
+  .Navbar-Logo img {
+    width: 50px;
+  }
+
+  .ResponsiveNavigation {
+    display: flex;
+  }
+
+  .ResponsiveNavigationControl {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    gap: 1em;
+  }
+
+  .ResponsiveNavigationControl p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .Container {
+    padding: 5%;
+  }
+
+  .ServiceListBox img {
+    min-width: 500px;
+    min-height: 300px;
+  }
+
+  .Flex {
+    display: block;
+  }
+
+  .SectionBoxSmall {
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+
+  .SectionBoxSmall:last-child {
+    margin-top: 10px !important;
+  }
+
+  .ApplicationFlexImageBox {
+    margin-top: 15px;
+    border-radius: 25px;
+  }
+
+  .responsiveMenuList {
+    display: none;
+  }
+
+  .responsiveMenuList.active {
+    display: block;
+    z-index: 800;
+    padding: 0 25px;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .responsiveMenuListContainer {
+    gap: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 25px;
+    height: 100%;
+    max-height: 450px;
+    display: flex;
+    text-align: center;
+    position: fixed;
+    border-radius: 25px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--tertiary-on-color);
+  }
+
+  .responsiveMenuListContainer li {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    padding: 10px;
+  }
+
+  .responsiveMenuListContainer li:hover {
+    background-color: var(--secondary-on-color);
+    border-radius: 10px;
+  }
+
+  .responsiveMenuListContainer li a {
+    width: 100%;
+    height: auto;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1024px) {
+  .HeroIndustrySlider {
+    display: none;
+  }
+
+  .ServicesInformationBoxContainer {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+  }
+
+  .ServiceListBoxContent {
+    padding: 25px 0px;
+  }
+
+  .ServiceListBox img {
+    min-width: 350px;
+  }
+
+  .ServiceList .ServiceListText {
+    width: 100%;
+  }
+
+  .ApplicationCarouselSlideBox {
+    width: 300px;
+    min-width: 300px;
+    height: 350px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 912px) {
+  .HeroOverlayContent {
+    width: 100%;
+  }
+
+  .SectionColorHeader h2 {
+    width: 100%;
+  }
+
+  .Gap-XL {
+    gap: 1em;
+  }
+
+  .ApplicationImageDesign {
+    flex-direction: column;
+  }
+
+  .ApplicationChartContentListContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .ServiceListBox {
+    flex-direction: column-reverse;
+  }
+
+  .ServiceListBox img {
+    width: 100%;
+  }
+
+  .ApplicationBanner h2 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ApplicationBanner .ApplicationText {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ApplicationBannerOverlay {
+    padding: 10px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 820px) {
+  .ApplicationContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin: auto;
+  }
+
+  .ApplicationFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 600px) {
+  .ServicesInformation h4 {
+    width: 100%;
+  }
+
+  .ApplicationCarouselFlex {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .SectionHeader h2 {
+    width: 100%;
+  }
+
+  .ApplicationImageDesign {
+    padding: 5%;
+  }
+
+  .ApplicationChartContentListHeader {
+    width: 100%;
+    margin-bottom: auto;
+  }
+
+  .ApplicationCarouselFlex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ApplicationCarouselFlex h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ApplicationCarouselContainer {
+    width: 100% !important;
+  }
+
+  .ApplicationCarouselContainer h2 {
+    text-align: center !important;
+  }
+
+  .ApplicationCarouselContainer p {
+    text-align: center !important;
+  }
+
+  .ApplicationFooterBottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ApplicationFooterBottom p {
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .ApplicationFooter {
+    padding: 5%;
+  }
+
+  .ServiceListBox img {
+    min-width: 100%;
+    min-height: auto;
+  }
+
+  .ApplicationFooterBox:nth-child(1) {
+    min-width: 100%;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 500px) {
+  .ApplicationContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ApplicationBox {
+    height: auto;
+  }
+
+  .HeroIndustrySlider {
+    display: flex;
+  }
+
+  .HeroIndustrySliderContainerItem {
+    border: none;
+    max-width: 60px;
+    min-width: 120px;
+    background-color: transparent;
+  }
+
+  .HeroIndustrySliderContainerItem p {
+    display: none;
+  }
+
+  .ServicesInformationBoxHeader {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ServicesInformationBoxHeader h6 {
+    width: 100%;
+  }
+
+  .ServicesInformationBox:first-child .ServicesInformationBoxHeader h6 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ServicesInformationBox:first-child .ServicesInformationBoxHeader p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ServicesInformationBoxHeader h6 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ServicesInformationBoxHeader p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ApplicationBanner {
+    height: 60vh;
+  }
+
+  .ApplicationButton {
+    width: 100%;
+  }
+
+  .responsiveMenuListContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 400px) {
+  .HeroOverlayContent h1 {
+    margin-top: 25%;
+  }
+
+  .HeroIndustrySlider {
+    height: 30%;
+  }
+
+  .ApplicationChartContentList {
+    gap: .5em;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 375px) {
+  .HeroIndustrySlider {
+    display: none;
+  }
+}

@@ -1,0 +1,1178 @@
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useGSAP } from "@gsap/react";
+
+import BlueEconomy from "../assets/86977b19-ebe8-433e-ab94-9b4675be22a8.png";
+import SummitObjectives from "../assets/SummitObjectives.jpeg";
+
+import GalleryOne from "../assets/GalleryOne.jpeg";
+import GalleryTwo from "../assets/GalleryTwo.jpeg";
+import GalleryThree from "../assets/GalleryThree.jpeg";
+import GalleryFour from "../assets/GalleryFour.jpeg";
+import GalleryFive from "../assets/GalleryFive.jpeg";
+import GallerySix from "../assets/GallerySix.jpeg";
+import GallerySeven from "../assets/GallerySeven.jpeg";
+
+import CavertonMarine from "../assets/CavertonMarine.png";
+import NigerDeltaDevelopmentCommission from "../assets/NigerDeltaDevelopmentCommission.png";
+import AkwaIbomStateGovernment from "../assets/AkwaIbomStateGovernment.png";
+import RiversStateGovernment from "../assets/RiversStateGovernment.png";
+import NLAInternational from "../assets/NLAInternational.png";
+import TargetOneGroup from "../assets/TargetOneGroup.png";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+import HeroImageOne from "../assets/HeroImageOne.jpeg";
+import HeroImageThree from "../assets/HeroImageThree.jpeg";
+import HeroImageSix from "../assets/HeroImageSix.jpeg";
+import HeroImageSeven from "../assets/HeroImageSeven.jpeg";
+
+import ChiefHost from "../assets/ChiefHost.jpg";
+import KeynoteSpeaker from "../assets/KeynoteSpeaker.jpg";
+import HostGovernor from "../assets/HostGovernor.webp";
+import HostGovernor1 from "../assets/HostGovernor1.webp";
+import SpecialGuest from "../assets/SpecialGuest.jpg";
+import SpecialGuest1 from "../assets/SpecialGuest1.jpeg";
+import SpecialGuest2 from "../assets/SpecialGuest2.jpg";
+import SpecialGuest3 from "../assets/SpecialGuest3.jpg";
+import SpecialGuest4 from "../assets/SpecialGuest4.jpg";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, Flip);
+
+const SLIDER_SHIFT_PX = -210;
+const SLIDER_INTERVAL_MS = 3000;
+const SLIDER_TRANSITION_MS = 500;
+
+const items = [
+  {
+    id: 1,
+    text: "Niger Delta Development Commission",
+    img: NigerDeltaDevelopmentCommission,
+    alt: "Niger Delta Blue Economy",
+  },
+  {
+    id: 2,
+    text: "Caverton Marine",
+    img: CavertonMarine,
+    alt: "Niger Delta Blue Economy",
+  },
+  {
+    id: 3,
+    text: "Target One Group",
+    img: TargetOneGroup,
+    alt: "Niger Delta Blue Economy",
+  },
+  {
+    id: 4,
+    text: "NLA International",
+    img: NLAInternational,
+    alt: "Niger Delta Blue Economy",
+  },
+  {
+    id: 5,
+    text: "Akwa Ibom State Government",
+    img: AkwaIbomStateGovernment,
+    alt: "Niger Delta Blue Economy",
+  },
+  {
+    id: 6,
+    text: "Rivers State Government",
+    img: RiversStateGovernment,
+    alt: "Niger Delta Blue Economy",
+  },
+];
+
+const industries = [
+  {
+    title: "Fisheries & Aquaculture",
+    description:
+      "Advancing sustainable fisheries and aquaculture systems to meet Africa’s rising seafood demand while generating employment, improving food security, and supporting coastal livelihoods.",
+    link: "/technology",
+  },
+  {
+    title: "Maritime Transport & Logistics",
+    description:
+      "Enhancing port infrastructure, shipping systems, and inland waterways to improve trade efficiency, regional connectivity, and economic competitiveness across Nigeria and West Africa.",
+    link: "/logistics",
+  },
+  {
+    title: "Coastal Tourism",
+    description:
+      "Unlocking the immense potential of coastal and marine tourism to drive economic diversification, attract global investment, and create millions of sustainable jobs by 2030.",
+    link: "/consulting-services",
+  },
+  {
+    title: "Renewable Energy",
+    description:
+      "Harnessing offshore wind, tidal, and other ocean-based energy sources to power sustainable development, reduce carbon emissions, and strengthen energy security.",
+    link: "/government-contracting",
+  },
+  {
+    title: "Oil & Gas Transformation",
+    description:
+      "Driving innovation, efficiency, and environmental responsibility in the oil and gas sector while aligning with global sustainability and energy transition goals.",
+    link: "/government-contracting",
+  },
+  {
+    title: "Climate & Environmental Sustainability",
+    description:
+      "Protecting marine ecosystems, coastlines, and biodiversity through climate resilience strategies, conservation initiatives, and sustainable resource management.",
+    link: "/government-contracting",
+  },
+];
+
+const galleryIndustries = [
+  {
+    title:
+      "DAY 1 RECAP – Niger Delta Blue Economy Investment Summit 2026 Opens with Strong Investment and Policy Focus",
+    description:
+      "The Niger Delta Blue Economy Investment Summit 2026 officially commenced at Four Points by Sheraton, Ikot Ekpene, Akwa Ibom State, bringing together government leaders, industry stakeholders, development partners, and investors to advance the blue economy as a strategic pathway for sustainable development in the Niger Delta. The opening day established a clear direction for the",
+    link: "/logistics",
+    image: HeroImageSix,
+  },
+  {
+    title:
+      "DAY 2 RECAP – Policy Dialogue and Strategic Launches Mark Implementation Phase of Niger Delta Blue Economy Agenda",
+    description:
+      "Day Two of the Niger Delta Blue Economy Investment Summit 2026 progressed into high-level policy and governance dialogue, consolidating political alignment, regulatory coherence, and institutional collaboration required to advance sustainable blue economy development across the Niger Delta. Building on the investment and partnership momentum established on Day One, discussions shifted toward governance frameworks, sectoral strategies",
+    link: "/technology",
+    image: HeroImageOne,
+  },
+  {
+    title:
+      "Niger Delta Blue Economy Summit and Caverton Marine Partner to Boost Sustainable Marine Transport",
+    description:
+      "Here’s an overview of a growing partnership in Nigeria’s marine sector focused on safety and sustainability The Niger Delta Blue Economy Investment Summit has formed a strategic partnership with Caverton Marine to improve marine transport safety and sustainability across the Niger Delta. The collaboration was announced after a high-level meeting in Lagos between the Summit’s",
+    link: "/consulting-services",
+    image: HeroImageSeven,
+  },
+];
+
+const strategicItems = [
+  {
+    icon: "groups",
+    title: "Networking & Strategic Partnerships",
+    description:
+      "Engage with policymakers, investors, and industry leaders to foster meaningful collaborations.",
+  },
+  {
+    icon: "gavel",
+    title: "Policy & Governance Dialogues",
+    description:
+      "Contribute to the development of frameworks that promote sustainable ocean resource management.",
+  },
+  {
+    icon: "trending_up",
+    title: "Investment Opportunities",
+    description:
+      "Discover high-potential ventures across aquaculture, renewable energy, tourism, and maritime logistics.",
+  },
+  {
+    icon: "school",
+    title: "Capacity Building",
+    description:
+      "Strengthen the capabilities of youth, women, and local communities through targeted training and improved access to resources.",
+  },
+];
+
+const industryImages = [
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1761872178/QuinnDaisies/51152_qph8bp.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925889/QuinnDaisies/1200_kzmwos.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/40197_qxydbd.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/788_bvaktx.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/130026_ugj9sx.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775925890/QuinnDaisies/2149636270_sl8t0l.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821788/QuinnDaisies/9354_mciahj.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821787/QuinnDaisies/119368_gohgon.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1761821787/QuinnDaisies/122602_pvkxns.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775774109/QuinnDaisies/2151977495_ctlifz.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775926162/QuinnDaisies/2150010125_xjn6j3.jpg",
+  "https://res.cloudinary.com/renaissance-images/image/upload/v1775926156/QuinnDaisies/126832_wkpqdn.jpg",
+];
+
+const industrySlides = industries.map((item, index) => ({
+  ...item,
+  image: industryImages[index % industryImages.length],
+}));
+
+const getVisibleSliderItems = (startIndex) =>
+  Array.from(
+    { length: 3 },
+    (_, offset) => items[(startIndex + offset) % items.length],
+  );
+
+export default function Home() {
+  const [sliderStartIndex, setSliderStartIndex] = useState(0);
+  const [shift, setShift] = useState(0);
+  const [newItemIn, setNewItemIn] = useState(false);
+
+  const pageRef = useRef(null);
+  const smoothWrapperRef = useRef(null);
+  const smoothContentRef = useRef(null);
+  const applicationCardsRef = useRef(null);
+  const imagePinRef = useRef(null);
+  const carouselSectionRef = useRef(null);
+  const carouselStripRef = useRef(null);
+  const galleryWrapRef = useRef(null);
+  const galleryCleanupRef = useRef(null);
+  const serviceGalleryEight = useRef(null);
+  const sliderTimeoutsRef = useRef([]);
+
+  const visible = useMemo(
+    () => getVisibleSliderItems(sliderStartIndex),
+    [sliderStartIndex],
+  );
+
+  useEffect(() => {
+    const clearSliderTimeouts = () => {
+      sliderTimeoutsRef.current.forEach(window.clearTimeout);
+      sliderTimeoutsRef.current = [];
+    };
+
+    const intervalId = window.setInterval(() => {
+      setShift(SLIDER_SHIFT_PX);
+
+      const advanceTimeout = window.setTimeout(() => {
+        setSliderStartIndex(
+          (currentIndex) => (currentIndex + 1) % items.length,
+        );
+        setShift(0);
+        setNewItemIn(true);
+
+        const resetNewItemTimeout = window.setTimeout(() => {
+          setNewItemIn(false);
+        }, SLIDER_TRANSITION_MS);
+
+        sliderTimeoutsRef.current.push(resetNewItemTimeout);
+      }, SLIDER_TRANSITION_MS);
+
+      sliderTimeoutsRef.current.push(advanceTimeout);
+    }, SLIDER_INTERVAL_MS);
+
+    return () => {
+      window.clearInterval(intervalId);
+      clearSliderTimeouts();
+    };
+  }, []);
+
+  // Smooth scroll should be created before the other ScrollTriggers.
+  useGSAP(
+    () => {
+      if (!smoothWrapperRef.current || !smoothContentRef.current)
+        return undefined;
+
+      ScrollTrigger.config({ ignoreMobileResize: true });
+
+      const existingSmoother = ScrollSmoother.get();
+      if (existingSmoother) existingSmoother.kill();
+
+      const smoother = ScrollSmoother.create({
+        wrapper: smoothWrapperRef.current,
+        content: smoothContentRef.current,
+        smooth: 1.2,
+        smoothTouch: 0.1,
+        effects: true,
+        normalizeScroll: true,
+      });
+
+      ScrollTrigger.refresh();
+
+      return () => {
+        smoother.kill();
+        ScrollTrigger.clearScrollMemory();
+      };
+    },
+    { scope: pageRef },
+  );
+
+  // ApplicationBox stagger animation
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray(".ApplicationBox");
+
+      boxes.forEach((box) => {
+        gsap.to(box, {
+          y: 0,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: 1.2,
+          },
+        });
+      });
+    },
+    { scope: applicationCardsRef },
+  );
+
+  // Pinned industry image/content section.
+  useGSAP(
+    () => {
+      const section = imagePinRef.current;
+      if (!section) return undefined;
+
+      const listItems = gsap.utils.toArray(
+        ".ApplicationChartDesignItem",
+        section,
+      );
+      const slides = gsap.utils.toArray(".ApplicationChartSlide", section);
+      const fill = section.querySelector(".fill");
+
+      if (!listItems.length || !slides.length || !fill) return undefined;
+
+      let activeIndex = 0;
+
+      const setActive = (index) => {
+        listItems.forEach((item, itemIndex) => {
+          item.classList.toggle("is-active", itemIndex === index);
+        });
+
+        slides.forEach((slide, slideIndex) => {
+          gsap.to(slide, {
+            autoAlpha: slideIndex === index ? 1 : 0,
+            x: slideIndex === index ? 0 : slideIndex < index ? -60 : 60,
+            duration: slideIndex === index ? 0.35 : 0.25,
+            overwrite: true,
+          });
+        });
+      };
+
+      gsap.set(fill, {
+        transformOrigin: "top center",
+        scaleY: 0,
+      });
+
+      gsap.set(slides, {
+        autoAlpha: 0,
+        x: 60,
+      });
+
+      gsap.set(slides[0], {
+        autoAlpha: 1,
+        x: 0,
+      });
+
+      setActive(0);
+
+      const trigger = ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: () => `+=${window.innerHeight * Math.max(slides.length - 1, 1)}`,
+        pin: true,
+        scrub: 0.3,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          gsap.set(fill, { scaleY: self.progress });
+
+          const nextIndex = Math.min(
+            slides.length - 1,
+            Math.floor(self.progress * slides.length),
+          );
+
+          if (nextIndex !== activeIndex) {
+            activeIndex = nextIndex;
+            setActive(activeIndex);
+          }
+        },
+      });
+
+      return () => trigger.kill();
+    },
+    { scope: imagePinRef },
+  );
+
+  // Horizontal carousel animation.
+  useGSAP(
+    () => {
+      const section = carouselSectionRef.current;
+      const strip = carouselStripRef.current;
+
+      if (!section || !strip) return undefined;
+
+      const getScrollDistance = () =>
+        Math.max(0, strip.scrollWidth - document.documentElement.clientWidth);
+
+      if (getScrollDistance() === 0) return undefined;
+
+      const tween = gsap.to(strip, {
+        x: () => -getScrollDistance(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          pinSpacing: true,
+          start: "top top",
+          end: () => `+=${getScrollDistance()}`,
+          scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      const images = Array.from(strip.querySelectorAll("img"));
+      const refreshOnImageLoad = () => ScrollTrigger.refresh();
+
+      images.forEach((image) => {
+        if (!image.complete) {
+          image.addEventListener("load", refreshOnImageLoad, { once: true });
+        }
+      });
+
+      ScrollTrigger.refresh();
+
+      return () => {
+        images.forEach((image) => {
+          image.removeEventListener("load", refreshOnImageLoad);
+        });
+        tween.kill();
+      };
+    },
+    { scope: carouselSectionRef },
+  );
+
+  // Flip gallery animation.
+  useLayoutEffect(() => {
+    let isActive = true;
+    let resizeFrameId = null;
+
+    const destroyGalleryTween = () => {
+      galleryCleanupRef.current?.();
+      galleryCleanupRef.current = null;
+    };
+
+    const createGalleryTween = () => {
+      const galleryElement = serviceGalleryEight.current;
+      const galleryWrap = galleryWrapRef.current;
+
+      if (!isActive || !galleryElement || !galleryWrap) return;
+
+      destroyGalleryTween();
+
+      const galleryItems = Array.from(
+        galleryElement.querySelectorAll(".ServiceGalleryItem"),
+      );
+
+      if (!galleryItems.length) return;
+
+      galleryElement.classList.remove("ServiceGalleryFinal");
+
+      const ctx = gsap.context(() => {
+        galleryElement.classList.add("ServiceGalleryFinal");
+        const finalState = Flip.getState(galleryItems);
+        galleryElement.classList.remove("ServiceGalleryFinal");
+
+        const flipTween = Flip.to(finalState, {
+          simple: true,
+          ease: "power2.inOut",
+        });
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: galleryElement,
+            start: "center center",
+            end: "+=100%",
+            scrub: true,
+            pin: galleryWrap,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        timeline.add(flipTween);
+
+        galleryCleanupRef.current = () => {
+          timeline.scrollTrigger?.kill();
+          timeline.kill();
+          ctx.revert();
+          galleryElement.classList.remove("ServiceGalleryFinal");
+          gsap.set(galleryItems, { clearProps: "all" });
+        };
+      }, galleryWrap);
+    };
+
+    const handleResize = () => {
+      if (!isActive) return;
+
+      if (resizeFrameId) window.cancelAnimationFrame(resizeFrameId);
+
+      resizeFrameId = window.requestAnimationFrame(() => {
+        createGalleryTween();
+        ScrollTrigger.refresh();
+      });
+    };
+
+    const initGallery = () => {
+      if (!isActive) return;
+      createGalleryTween();
+      window.addEventListener("resize", handleResize);
+      ScrollTrigger.refresh();
+    };
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(initGallery);
+    } else {
+      initGallery();
+    }
+
+    return () => {
+      isActive = false;
+      window.removeEventListener("resize", handleResize);
+
+      if (resizeFrameId) window.cancelAnimationFrame(resizeFrameId);
+
+      destroyGalleryTween();
+    };
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>Niger Delta Blue Economy Summit</title>
+        <meta
+          name="description"
+          content="Policy Dialogue and Strategic Launches Mark Implementation Phase of Niger Delta Blue Economy Agenda Day Two of the Niger Delta Blue Economy Investment Summit 2026 progressed into high-level policy and governance dialogue, consolidating political alignment, regulatory coherence, and institutional collaboration required to advance sustainable blue economy development across the Niger Delta."
+        />
+        <link
+          rel="canonical"
+          href="https://www.nigerdeltablueeconomysummit.org/"
+        />
+
+        <meta property="og:title" content="Niger Delta Blue Economy Summit" />
+        <meta
+          property="og:description"
+          content="Niger Delta Blue Economy Summit"
+        />
+        <meta
+          property="og:url"
+          content="https://www.nigerdeltablueeconomysummit.org/"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/quinn-daisies-platform/image/upload/v1718651332/Quinn_Daisies_Blog/logo1_y3fmfr.svg"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Niger Delta Blue Economy Summit" />
+        <meta
+          name="twitter:description"
+          content="Policy Dialogue and Strategic Launches Mark Implementation Phase of Niger Delta Blue Economy Agenda Day Two of the Niger Delta Blue Economy Investment Summit 2026 progressed into high-level policy and governance dialogue, consolidating political alignment, regulatory coherence, and institutional collaboration required to advance sustainable blue economy development across the Niger Delta."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/quinn-daisies-platform/image/upload/v1718651332/Quinn_Daisies_Blog/logo1_y3fmfr.svg"
+        />
+
+        <meta
+          name="keywords"
+          content="Expert logistics solutions including international shipping, packaging services, customs clearance, and importation services across 150+ countries."
+        />
+        <meta
+          property="og:keywords"
+          content="Expert logistics solutions including international shipping, packaging services, customs clearance, and importation services across 150+ countries."
+        />
+
+        <meta name="author" content="Ebire Folayemi Michael" />
+        <meta name="revised" content="12th of April 2025" />
+      </Helmet>
+
+      <div ref={pageRef}>
+        <Navbar />
+
+        <div id="smooth-wrapper" ref={smoothWrapperRef}>
+          <div id="smooth-content" ref={smoothContentRef}>
+            <section className="HeroContainer" id="home">
+              <img src={HeroImageOne} alt="Blue Economy" />
+
+              <div className="HeroOverlay">
+                <div className="HeroOverlayContent">
+                  <h1>
+                    Niger Delta Blue Economy Investment Summit 2026{" "}
+                    <span>Opens with Strong Investment and Policy Focus</span>
+                  </h1>
+                  <p>
+                    Leaders, investors, and stakeholders convened in Ikot
+                    Ekpene, Akwa Ibom State to advance partnerships, policy
+                    alignment, and sustainable blue economy development across
+                    the Niger Delta.
+                  </p>
+
+                  <Link to="/home" className="ApplicationButton">
+                    <p>Read More About The Summit</p>
+                    <span className="material-symbols-outlined">
+                      arrow_outward
+                    </span>
+                  </Link>
+                </div>
+
+                <div className="HeroIndustrySlider">
+                  <div
+                    className="HeroIndustrySliderContainer"
+                    style={{
+                      transform: `translateX(${shift}px)`,
+                      transition: `transform ${SLIDER_TRANSITION_MS}ms ease`,
+                    }}
+                  >
+                    {visible.map((item, index) => (
+                      <div
+                        key={item.id}
+                        className={`HeroIndustrySliderContainerItem ${
+                          newItemIn && index === 2 ? "slide-in-new" : ""
+                        }`}
+                      >
+                        <img src={item.img} alt={item.alt} />
+                        <p>{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="White-Background Container Flex Gap-XL">
+              <div className="SectionHeader">
+                <h2>Strategic Opportunities & Impact Initiatives</h2>
+              </div>
+
+              <div className="ApplicationContainer" ref={applicationCardsRef}>
+                {strategicItems.map((item, index) => (
+                  <div className="ApplicationBox" key={index}>
+                    {/* Google Material Icon */}
+                    <span className="material-symbols-outlined ApplicationIcon">
+                      {item.icon}
+                    </span>
+
+                    <h3>{item.title}</h3>
+                    <p className="ApplicationDescription">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="Container ServicesInformation" id="about">
+              <span>About the Summit</span>
+              <h4>
+                The Niger Delta Blue Economy Investment Summit is a premier,
+                high-level platform established to catalyse the sustainable
+                development of the Niger Delta’s vast maritime and aquatic
+                resources.
+              </h4>
+
+              <div className="ServicesInformationBoxContainer">
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Inclusive Stakeholder Engagement</h6>
+                    <p>
+                      A fully inclusive, first-of-its-kind platform uniting
+                      policymakers, investors, industry leaders, academia,
+                      development partners, and civil society to shape a shared
+                      vision for the Niger Delta’s future.
+                    </p>
+                  </div>
+                  <h3>
+                    100<text>%</text>
+                  </h3>
+                </div>
+
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Policy, Dialogue & Collaboration</h6>
+                    <p>
+                      A high-impact environment for strategic dialogue,
+                      knowledge exchange, and multi-stakeholder
+                      collaboration—strengthening governance frameworks,
+                      fostering partnerships, and building the political will
+                      needed to unlock maritime potential.
+                    </p>
+                  </div>
+                  <h3>
+                    95<text>%</text>
+                  </h3>
+                </div>
+
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Sustainable Impact Outcomes</h6>
+                    <p>
+                      Focused on translating opportunities into measurable
+                      results, including improved food security, enhanced
+                      climate resilience, and long-term sustainable economic
+                      development.
+                    </p>
+                  </div>
+                  <h3>
+                    90<text>%</text>
+                  </h3>
+                </div>
+
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Strategic Vision & Positioning</h6>
+                    <p>
+                      Guided by its central theme, the Summit is strategically
+                      positioned to elevate the Niger Delta as a leading force
+                      in Africa’s rapidly growing blue economy ecosystem.
+                    </p>
+                  </div>
+                  <h3>
+                    92<text>%</text>
+                  </h3>
+                </div>
+
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Global Participation & Influence</h6>
+                    <p>
+                      Hosting over 350 high-level delegates from Nigeria, across
+                      Africa, and internationally—creating a dynamic platform
+                      for investment dialogue, policy alignment, and
+                      cross-border collaboration.
+                    </p>
+                  </div>
+                  <h3>
+                    88<text>%</text>
+                  </h3>
+                </div>
+
+                <div className="ServicesInformationBox">
+                  <div className="ServicesInformationBoxHeader">
+                    <h6>Action-Driven Commitments</h6>
+                    <p>
+                      Beyond conversations, the Summit is designed to catalyse
+                      tangible outcomes—mobilising investments, strengthening
+                      partnerships, and driving actionable commitments for
+                      long-term regional transformation.
+                    </p>
+                  </div>
+                  <h3>
+                    92<text>%</text>
+                  </h3>
+                </div>
+              </div>
+
+              <p className="ServicesInformationBottomText">
+                Designed as a strategic convergence point for policy,
+                investment, and innovation, the Summit seeks to unlock the
+                region’s blue economy potential as a driver of inclusive
+                economic growth, environmental restoration, job creation, and
+                long-term livelihood transformation.
+              </p>
+
+              <p className="ServicesInformationBottomText">
+                At its core, the Summit addresses a critical need: aligning the
+                region’s natural endowments with coordinated action, targeted
+                investment, and forward-thinking policy frameworks. By
+                mobilising both public and private sector participation, it aims
+                to channel resources into high-impact sectors while promoting
+                responsible stewardship of marine and coastal ecosystems.
+              </p>
+            </section>
+
+            <section className="White-Background Container Gap-XL">
+              <div className="SectionColorHeader">
+                <span>Niger Delta Blue Economy Investment Summit</span>
+                <h2>
+                  The Niger Delta is entering a defining era—one that presents
+                  both an urgent challenge and an unprecedented opportunity.
+                </h2>
+              </div>
+
+              <div className="Flex Gap-SM">
+                <div className="SectionBoxSmall">
+                  <h2>100%</h2>
+                  <p>
+                    Despite these opportunities, challenges such as weak
+                    regulatory systems, poor coordination, environmental
+                    degradation, climate impacts, and limited investment have
+                    slowed progress. This summit seeks to reverse that
+                    trajectory by rallying key actors around a unified regional
+                    strategy.
+                  </p>
+                </div>
+
+                <div className="SectionBoxLarge">
+                  <img src={HeroImageThree} alt="Quinn Daisies AI operations" />
+                </div>
+
+                <div className="SectionBoxSmall">
+                  <p>
+                    With approximately 853 kilometers of coastline and a vast
+                    network of rivers, mangroves, fisheries, and marine
+                    ecosystems, the Niger Delta holds unmatched potential for
+                    sustainable economic growth. The blue economy—covering
+                    sectors such as fisheries, aquaculture, maritime transport,
+                    coastal tourism, renewable energy, and ocean governance—is
+                    projected to contribute over $405 billion to Africa’s
+                    economy by 2030.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="Container ServiceContainer">
+              <h2 className="ServiceText">
+                At Quinn Daisies, we provide a comprehensive range of
+                professional services designed to help organizations solve
+                complex challenges, strengthen operations, and achieve
+                sustainable success. From technology and logistics to
+                consulting, workforce solutions, business development, and
+                digital innovation, our services are tailored to deliver
+                measurable value and long-term impact.
+              </h2>
+            </section>
+
+            <section
+              className="White-Background ApplicationImageDesign"
+              ref={imagePinRef}
+              id="industries"
+            >
+              <div className="ApplicationChartContentListContainer">
+                <div className="fill" />
+                <div className="ApplicationChartContentList">
+                  <h2 className="ApplicationChartContentListHeader">
+                    Key Blue Economy Sectors Driving Growth & Innovation
+                  </h2>
+                  {industrySlides.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`ApplicationChartDesignItem ${index === 0 ? "is-active" : ""}`}
+                      data-index={index}
+                    >
+                      <h4>{item.title}</h4>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="ApplicationChartContent">
+                <div className="ApplicationChartSlides">
+                  {industrySlides.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`ApplicationChartSlide ${index === 0 ? "is-active" : ""}`}
+                    >
+                      <div className="ApplicationChartContentContainer">
+                        <img src={item.image} alt={item.title} />
+
+                        <div className="ApplicationChartContentContainerContent">
+                          <p className="ApplicationChartContentContainerContentText">
+                            {item.description}
+                          </p>
+
+                          <Link to={item.link} className="ApplicationButton">
+                            <p>{item.title}</p>
+                            <span className="material-symbols-outlined">
+                              arrow_outward
+                            </span>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <section className="ServiceGallerySection">
+              <div className="ServiceGalleryWrap" ref={galleryWrapRef}>
+                <div
+                  className="ServiceGallery ServiceGalleryBento ServiceGallerySwitch"
+                  ref={serviceGalleryEight}
+                >
+                  <div className="ServiceGalleryItem">
+                    <img src={GalleryOne} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GalleryTwo} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={BlueEconomy} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GalleryThree} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GalleryFour} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GalleryFive} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GallerySix} alt="Niger Delta Blue Economy" />
+                  </div>
+                  <div className="ServiceGalleryItem">
+                    <img src={GallerySeven} alt="Niger Delta Blue Economy" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="Container Gap-XL ServicePosition" id="blogpost">
+                <div className="ServiceList">
+                  <h3>
+                    Summit Highlights & Key Developments Shaping the Future of
+                    the Niger Delta Blue Economy
+                  </h3>
+                  <p className="ServiceListText">
+                    Explore key moments, strategic announcements, and major
+                    outcomes from the Niger Delta Blue Economy Investment
+                    Summit, capturing the progress, partnerships, and policy
+                    directions driving sustainable growth and transformation
+                    across the region.
+                  </p>
+                </div>
+
+                <div className="ServiceListBoxContainer">
+                  {galleryIndustries.map((industry) => (
+                    <div className="ServiceListBox" key={industry.title}>
+                      <div className="ServiceListBoxContent">
+                        <h4>{industry.title}</h4>
+                        <p className="ServiceListBoxContentText">
+                          {industry.description}
+                        </p>
+
+                        <Link to={industry.link} className="ApplicationButton">
+                          <p>Learn More</p>
+                          <span className="material-symbols-outlined">
+                            arrow_outward
+                          </span>
+                        </Link>
+                      </div>
+
+                      <img src={industry.image} alt={industry.title} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <section className="White-Background Container Gap-XL">
+              <div className="Flex Gap-XL">
+                <div className="Column ApplicationFlexWidth">
+                  <div className="ApplicationSectionColorHeader">
+                    <span>Summit Objectives</span>
+                    <h2>Niger Delta Blue Economy Investment Summit</h2>
+                    <p>
+                      The Niger Delta Blue Economy Investment Summit is designed
+                      to deliver a structured, outcome-driven framework that
+                      accelerates the sustainable development of the Niger
+                      Delta’s blue economy through collaboration, investment,
+                      and policy alignment. Its core objectives include:
+                    </p>
+                  </div>
+
+                  <div className="Column Gap-SM">
+                    <div className="ApplicationBoxSmall Flex Gap-SM">
+                      <p>
+                        Facilitate dialogue between government, private sector,
+                        academia, international organisations, and civil
+                        society.
+                      </p>
+                    </div>
+
+                    <div className="ApplicationBoxSmall Flex Gap-SM">
+                      <p>
+                        Develop a coordinated roadmap for financing and
+                        implementing blue economy interventions.
+                      </p>
+                    </div>
+
+                    <div className="ApplicationBoxSmall Flex Gap-SM">
+                      <p>
+                        Strengthen regional cooperation and alignment with the
+                        African Union’s Africa Blue Economy Strategy and
+                        National Policy on Marine and Blue Economy.
+                      </p>
+                    </div>
+
+                    <div className="ApplicationBoxSmall Flex Gap-SM">
+                      <p>
+                        Ensure that women, youth, and coastal communities are
+                        central to the development agenda.
+                      </p>
+                    </div>
+
+                    <div className="ApplicationBoxSmall Flex Gap-SM">
+                      <p>
+                        Establish a long-term platform for policy innovation,
+                        resource mobilisation, and sustainable development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ApplicationFlexImageBox">
+                  <img src={SummitObjectives} alt="Niger Delta Blue Economy" />
+                </div>
+              </div>
+            </section>
+
+            <section
+              className="White-Background"
+              id="CarouselAnimation"
+              ref={carouselSectionRef}
+            >
+              <div className="ApplicationCarousel" id="leadership">
+                <div className="ApplicationCarouselFlex">
+                  <h2>Distinguished Leadership & Key Speakers</h2>
+
+                  <div className="ApplicationCarouselContainer">
+                    <p className="ApplicationCarouselContainerText">
+                      Engage with an exceptional lineup of influential leaders
+                      and renowned experts, featuring distinguished voices from
+                      government, industry, academia, and the global development
+                      community.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="ApplicationCarouselViewport">
+                  <div
+                    className="ApplicationCarouselSlide"
+                    ref={carouselStripRef}
+                  >
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={ChiefHost} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Chief Dr. Samuel Ogbuku</h4>
+                        <p>Managing Director, NDDC - Chief host</p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBoxImage">
+                      <img
+                        src="https://res.cloudinary.com/renaissance-images/image/upload/v1761835851/QuinnDaisies/165478_jbtjkf.jpg"
+                        alt="Niger Delta Blue Economy"
+                      />
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img
+                        src={KeynoteSpeaker}
+                        alt="Niger Delta Blue Economy"
+                      />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>H.E. Mehdi Jomaa</h4>
+                        <p>
+                          Former Prime Minister of Tunisia (Keynote) - Keynote
+                          Speaker
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={HostGovernor} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>H.E Pastor Umo Eno</h4>
+                        <p>
+                          Executive Governor of Akwa Ibom State - Host Governor
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={HostGovernor1} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Sir Siminalayi Fubara</h4>
+                        <p>
+                          Executive Governor of Rivers State - Host Governor
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={SpecialGuest} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Jonathan Turner</h4>
+                        <p>
+                          Director and Co-founder, NLA Limited, United Kingdom -
+                          Special Guest
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={SpecialGuest1} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Vice Admiral Idi Abbas</h4>
+                        <p>Chief of Naval staff - Special Guest</p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={SpecialGuest2} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Nwabisa Matoti</h4>
+                        <p>
+                          South African International Maritime Institute -
+                          Special Guest
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={SpecialGuest3} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Ahmed Y. Hersi</h4>
+                        <p>
+                          Director , Maritime Institute, Horn of Africa, Region.
+                          Ethiopia - Special Guest
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="ApplicationCarouselSlideBox">
+                      <img src={SpecialGuest4} alt="Niger Delta Blue Economy" />
+                      <div className="ApplicationCarouselSlideBoxContent">
+                        <h4>Osaretin Grace Ihu</h4>
+                        <p>
+                          Special Adviser to NSA on Energy Security and Niger
+                          Delta - Special Guest
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="White-Background Container">
+              <div className="ApplicationBanner">
+                <img
+                  src="https://res.cloudinary.com/renaissance-images/image/upload/v1775604123/QuinnDaisies/future-visions-business-technology-concept_ehpo8p.jpg"
+                  alt="Niger Delta Blue Economy"
+                />
+
+                <div className="ApplicationBannerOverlay">
+                  <h2>
+                    Need Deep Technical Expertise Supporting Modern Systems
+                  </h2>
+                  <p className="ApplicationText">
+                    Turn your professional, technical and strategic difficulties
+                    into a competitive advantage with our expert solutions.
+                  </p>
+
+                  <Link to="/home" className="ApplicationButton">
+                    <p>Learn More Here</p>
+                    <span className="material-symbols-outlined">
+                      arrow_outward
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
