@@ -2024,6 +2024,218 @@ nav .NavlinkItem {
   display: none;
 }
 
+.responsiveMenuList {
+  display: none;
+}
+
+button.ApplicationButton {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.PostContentOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1em;
+  inset: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  background: rgba(5, 17, 31, 0.95);
+}
+
+.PostContentOverlay::-webkit-scrollbar {
+  display: none;
+}
+
+
+.PostContentOverlayClose {
+  position: fixed;
+  top: 24px;
+  right: 5%;
+  z-index: 2;
+  margin-bottom: 25px;
+}
+
+.PostContentOverlayContents {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.PostContentOverlayContent,
+.PostContentOverlayAside {
+  background: #ffffff;
+  color: #0b1f33;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.PostContentOverlayContent > span,
+.PostContentOverlayAsideHeader span,
+.PostContentOverlayAsideItem span {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: var(--link-span-text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.PostContentOverlayContent h2 {
+  line-height: 30px;
+}
+
+.PostContentOverlayMeta {
+  margin-bottom: 28px;
+  color: var(--primary-on-color);
+  font-size: var(--link-span-text) !important;
+}
+
+.PostContentOverlayHeroImage,
+.PostContentOverlayInlineImage {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.PostContentOverlayHeroImage {
+  max-height: 480px;
+  margin-bottom: 32px;
+}
+
+.PostContentOverlayInlineImage {
+  max-height: 360px;
+  margin: 24px 0;
+}
+
+.PostContentOverlayBody {
+  display: grid;
+  gap: 18px;
+}
+
+.PostContentOverlayBody h3 {
+ color: var(--tertiary-color);
+}
+
+.PostContentOverlayBody p {
+ color: var(--secondary-color);
+}
+
+.PostContentOverlayImagePlaceholder {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  margin: 20px 0;
+  border: 1px dashed rgba(11, 31, 51, 0.35);
+  border-radius: 22px;
+  text-align: center;
+  color: rgba(11, 31, 51, 0.58);
+}
+
+.PostContentOverlayImagePlaceholder .material-symbols-outlined {
+  font-size: 44px;
+}
+
+.PostContentOverlaySource {
+  margin-top: 32px;
+}
+
+.PostContentOverlayAside {
+  position: sticky;
+}
+
+.PostContentOverlayAsideHeader h2 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.PostContentOverlayAsideList {
+  display: grid;
+  gap: 16px;
+}
+
+.PostContentOverlayAsideItem {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  border: 0;
+  border-radius: 18px;
+  padding: 12px;
+  text-align: left;
+  background: rgba(11, 31, 51, 0.06);
+  color: inherit;
+  cursor: pointer;
+}
+
+.PostContentOverlayAsideItem img {
+  width: 100px;
+  height: 100px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.PostContentOverlayAsideItem h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.PostContentOverlayAsideItem p {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0.72;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 900px) {
+  .PostContentOverlay {
+    padding: 16px;
+  }
+
+  .PostContentOverlayContents {
+    grid-template-columns: 1fr;
+    margin-top: 82px;
+  }
+
+  .PostContentOverlayAside {
+    position: static;
+  }
+
+  .PostContentOverlayClose {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.PostContentOverlayFlexContentAside {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1280px) {
   h1 {
     font-size: var(--mini-text) !important;
@@ -2139,10 +2351,6 @@ nav .NavlinkItem {
     border-radius: 25px;
   }
 
-  .responsiveMenuList {
-    display: none;
-  }
-
   .responsiveMenuList.active {
     display: block;
     z-index: 800;
@@ -2206,6 +2414,10 @@ nav .NavlinkItem {
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1024px) {
   .HeroIndustrySlider {
     display: none;
+  }
+
+  .PostContentOverlayContents {
+    flex-direction: column;
   }
 
   .ServicesInformationBoxContainer {
@@ -2298,6 +2510,16 @@ nav .NavlinkItem {
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 600px) {
   .ServicesInformation h4 {
     width: 100%;
+  }
+
+  .ServiceListBox {
+    padding: 10px;
+  }
+
+  .PostContentOverlayAsideItem {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
   }
 
   .ApplicationCarouselFlex {
@@ -2427,10 +2649,6 @@ nav .NavlinkItem {
     height: 60vh;
   }
 
-  .ApplicationButton {
-    width: 100%;
-  }
-
   .responsiveMenuListContainer {
     width: 100%;
     height: 100%;
@@ -2449,12 +2667,18 @@ nav .NavlinkItem {
   }
 
   .ApplicationChartContentList {
-    gap: .5em;
+    gap: 0.5em;
   }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 375px) {
   .HeroIndustrySlider {
     display: none;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 375px) {
+  .ApplicationButton {
+    width: 300px;
   }
 }
