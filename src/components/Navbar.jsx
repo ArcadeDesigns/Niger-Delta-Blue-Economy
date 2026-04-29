@@ -26,7 +26,8 @@ export default function Navbar() {
   const isBlogActive = hash === "#blogpost";
   const isLeadershipActive = hash === "#leadership";
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen((current) => !current);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
@@ -87,11 +88,11 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       <div className="ResponsiveNavigation">
-        <Link className="Navbar-Logo" to="/#home">
+        <Link className="Navbar-Logo" to="/#home" onClick={closeMenu}>
           <img src={Logo} alt="Blue Economy Logo" />
         </Link>
 
-        <div className="ResponsiveNavigationControl" onClick={toggleMenu}>
+       <div className="ResponsiveNavigationControl" onClick={toggleMenu}>
           <p>Menu</p>
           <span className="material-symbols-outlined">
             {menuOpen ? "close" : "menu"}
@@ -102,22 +103,44 @@ export default function Navbar() {
       <ul className={`responsiveMenuList ${menuOpen ? "active" : ""}`}>
         <div className="responsiveMenuListContainer">
           <li>
-            <a href="#home">Home</a>
+            <a href="#home" onClick={closeMenu}>
+              Home
+            </a>
           </li>
+
           <li>
-            <a href="#about">About The Summit</a>
+            <a href="#about" onClick={closeMenu}>
+              About The Summit
+            </a>
           </li>
+
           <li>
-            <a href="#industries">Industries</a>
+            <a href="#industries" onClick={closeMenu}>
+              Industries
+            </a>
           </li>
+
           <li>
-            <a href="#blogpost">Blog Post</a>
+            <a href="#blogpost" onClick={closeMenu}>
+              Blog Post
+            </a>
           </li>
+
           <li>
-            <a href="#leadership">Leadership</a>
+            <a href="#leadership" onClick={closeMenu}>
+              Leadership
+            </a>
           </li>
+
           <li>
-            <a href="#leadership">Contact Us</a>
+            <a
+              href="https://calendly.com/quinndaisies-info/meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              Contact Us
+            </a>
           </li>
         </div>
       </ul>
