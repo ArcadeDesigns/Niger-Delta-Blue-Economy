@@ -31,6 +31,7 @@ import Footer from "../components/Footer";
 
 import HeroImageOne from "../assets/HeroImageOne.jpeg";
 import HeroImageThree from "../assets/HeroImageThree.jpeg";
+import HeroImageFive from "../assets/HeroImageFive.jpeg";
 import HeroImageSix from "../assets/HeroImageSix.jpeg";
 import HeroImageSeven from "../assets/HeroImageSeven.jpeg";
 
@@ -50,8 +51,6 @@ import CoastalTourism from "../assets/CoastalTourism.jpg";
 import RenewableEnergy from "../assets/RenewableEnergy.jpg";
 import OilGasTransformation from "../assets/OilGasTransformation.jpg";
 import ClimateEnvironmentalSustainability from "../assets/ClimateEnvironmentalSustainability.jpg";
-
-
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, Flip);
 
@@ -146,18 +145,16 @@ const galleryIndustries = [
     content: [
       {
         type: "paragraph",
-        text:
-          "The Niger Delta Blue Economy Investment Summit 2026 officially commenced at Four Points by Sheraton, Ikot Ekpene, Akwa Ibom State, bringing together government leaders, industry stakeholders, development partners, and investors to advance the blue economy as a strategic pathway for sustainable development in the Niger Delta.",
+        text: "The Niger Delta Blue Economy Investment Summit 2026 officially commenced at Four Points by Sheraton, Ikot Ekpene, Akwa Ibom State, bringing together government leaders, industry stakeholders, development partners, and investors to advance the blue economy as a strategic pathway for sustainable development in the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "The opening day established a clear direction for the Summit: mobilising investment, strengthening partnerships, and aligning policy frameworks to unlock the region’s vast marine and coastal assets for inclusive growth, economic diversification, and long-term prosperity.",
+        text: "The opening day established a clear direction for the Summit: mobilising investment, strengthening partnerships, and aligning policy frameworks to unlock the region’s vast marine and coastal assets for inclusive growth, economic diversification, and long-term prosperity.",
       },
       {
         type: "image",
         alt: "img 9787",
-        src: "",
+        src: HeroImageFive,
       },
       {
         type: "heading",
@@ -165,23 +162,21 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "Proceedings began with registration and welcome engagements, followed by opening formalities and goodwill messages from national and regional stakeholders. The ceremony underscored the urgency of transitioning the Niger Delta toward a diversified, ocean-based economy capable of generating jobs, strengthening livelihoods, and reducing dependence on extractive industries.",
+        text: "Proceedings began with registration and welcome engagements, followed by opening formalities and goodwill messages from national and regional stakeholders. The ceremony underscored the urgency of transitioning the Niger Delta toward a diversified, ocean-based economy capable of generating jobs, strengthening livelihoods, and reducing dependence on extractive industries.",
       },
       {
         type: "paragraph",
-        text:
-          "In his welcome remarks, the host state reaffirmed its commitment to positioning Akwa Ibom as a regional hub for blue economy development, supported by its extensive coastline, expanding maritime infrastructure, and investment-ready policy environment.",
+        text: "In his welcome remarks, the host state reaffirmed its commitment to positioning Akwa Ibom as a regional hub for blue economy development, supported by its extensive coastline, expanding maritime infrastructure, and investment-ready policy environment.",
       },
       {
         type: "image",
         alt: "img 9874",
-        src: "",
+        src: HeroImageSix,
       },
       {
         type: "image",
         alt: "img 1715",
-        src: "",
+        src: HeroImageSeven,
       },
       {
         type: "image",
@@ -199,13 +194,11 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "A central highlight of Day One was the high-level fireside chat on “The Rise of the Tide of the Blue Economy,” featuring senior government leaders and private-sector stakeholders. The session explored policy direction, infrastructure priorities, private-sector participation, and regional collaboration required to accelerate blue economy growth across the Niger Delta.",
+        text: "A central highlight of Day One was the high-level fireside chat on “The Rise of the Tide of the Blue Economy,” featuring senior government leaders and private-sector stakeholders. The session explored policy direction, infrastructure priorities, private-sector participation, and regional collaboration required to accelerate blue economy growth across the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "Speakers emphasised that the region’s marine and coastal resources represent a shared national asset capable of driving industrialisation, maritime trade, fisheries development, tourism, renewable energy, and environmental sustainability.",
+        text: "Speakers emphasised that the region’s marine and coastal resources represent a shared national asset capable of driving industrialisation, maritime trade, fisheries development, tourism, renewable energy, and environmental sustainability.",
       },
       {
         type: "heading",
@@ -213,13 +206,11 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "Discussions throughout the day reinforced Akwa Ibom State’s role as an emerging anchor for blue economy investment. Its strategic Atlantic access, port development ambitions, and integrated industrial planning were highlighted as catalysts for logistics expansion, export-oriented manufacturing, and marine resource processing across the Niger Delta.",
+        text: "Discussions throughout the day reinforced Akwa Ibom State’s role as an emerging anchor for blue economy investment. Its strategic Atlantic access, port development ambitions, and integrated industrial planning were highlighted as catalysts for logistics expansion, export-oriented manufacturing, and marine resource processing across the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "Participants also underscored the importance of complementary investments in shoreline protection, coastal infrastructure, and environmental resilience to sustain long-term investor confidence and protect coastal communities.",
+        text: "Participants also underscored the importance of complementary investments in shoreline protection, coastal infrastructure, and environmental resilience to sustain long-term investor confidence and protect coastal communities.",
       },
       {
         type: "heading",
@@ -227,13 +218,11 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "Across engagements, stakeholders converged on a shared priority: translating policy dialogue into bankable projects and investment pipelines. Emphasis was placed on strengthening governance frameworks, improving maritime security, enabling private-sector participation, and ensuring that coastal and riverine communities remain active beneficiaries of blue economy growth.",
+        text: "Across engagements, stakeholders converged on a shared priority: translating policy dialogue into bankable projects and investment pipelines. Emphasis was placed on strengthening governance frameworks, improving maritime security, enabling private-sector participation, and ensuring that coastal and riverine communities remain active beneficiaries of blue economy growth.",
       },
       {
         type: "paragraph",
-        text:
-          "Day One concluded with renewed commitment from public and private stakeholders to deepen collaboration throughout the Summit and beyond, setting the stage for policy and governance discussions on Day Two.",
+        text: "Day One concluded with renewed commitment from public and private stakeholders to deepen collaboration throughout the Summit and beyond, setting the stage for policy and governance discussions on Day Two.",
       },
     ],
   },
@@ -251,13 +240,11 @@ const galleryIndustries = [
     content: [
       {
         type: "paragraph",
-        text:
-          "Day Two of the Niger Delta Blue Economy Investment Summit 2026 progressed into high-level policy and governance dialogue, consolidating political alignment, regulatory coherence, and institutional collaboration required to advance sustainable blue economy development across the Niger Delta.",
+        text: "Day Two of the Niger Delta Blue Economy Investment Summit 2026 progressed into high-level policy and governance dialogue, consolidating political alignment, regulatory coherence, and institutional collaboration required to advance sustainable blue economy development across the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "Building on the investment and partnership momentum established on Day One, discussions shifted toward governance frameworks, sectoral strategies, and implementation mechanisms needed to translate vision into measurable economic and community outcomes.",
+        text: "Building on the investment and partnership momentum established on Day One, discussions shifted toward governance frameworks, sectoral strategies, and implementation mechanisms needed to translate vision into measurable economic and community outcomes.",
       },
       {
         type: "heading",
@@ -265,13 +252,11 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "The day opened with a keynote address on “Unlocking Blue Economy Potentials for Shared Prosperity in the Niger Delta,” which emphasised the need for coordinated national and regional action to harness marine resources responsibly and competitively.",
+        text: "The day opened with a keynote address on “Unlocking Blue Economy Potentials for Shared Prosperity in the Niger Delta,” which emphasised the need for coordinated national and regional action to harness marine resources responsibly and competitively.",
       },
       {
         type: "paragraph",
-        text:
-          "The address highlighted that sustainable blue economy growth depends on credible institutions, policy continuity, and long-term strategic planning capable of attracting global investment while safeguarding environmental assets.",
+        text: "The address highlighted that sustainable blue economy growth depends on credible institutions, policy continuity, and long-term strategic planning capable of attracting global investment while safeguarding environmental assets.",
       },
       {
         type: "heading",
@@ -279,18 +264,15 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "A series of technical and policy panels examined critical enablers of blue economy development, including maritime security and safe marine transportation, regulatory and institutional reform, regional cooperation, sustainable fisheries and aquaculture, and environmental remediation.",
+        text: "A series of technical and policy panels examined critical enablers of blue economy development, including maritime security and safe marine transportation, regulatory and institutional reform, regional cooperation, sustainable fisheries and aquaculture, and environmental remediation.",
       },
       {
         type: "paragraph",
-        text:
-          "Speakers underscored that tackling marine pollution, strengthening maritime governance, and improving regulatory clarity are essential to unlocking investment in shipping, fisheries, coastal tourism, offshore energy, and marine logistics across the Niger Delta.",
+        text: "Speakers underscored that tackling marine pollution, strengthening maritime governance, and improving regulatory clarity are essential to unlocking investment in shipping, fisheries, coastal tourism, offshore energy, and marine logistics across the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "Sessions on food security highlighted the transformative potential of fisheries and aquaculture value chains to generate employment, enhance nutrition, and strengthen coastal livelihoods when supported by infrastructure, financing, and market access.",
+        text: "Sessions on food security highlighted the transformative potential of fisheries and aquaculture value chains to generate employment, enhance nutrition, and strengthen coastal livelihoods when supported by infrastructure, financing, and market access.",
       },
       {
         type: "heading",
@@ -298,18 +280,15 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "A defining milestone of Day Two was the formal launch of the Niger Delta Blue Economy Roadmap and the Niger Delta Blue Economy Development Fund. These instruments establish a structured framework for project prioritisation, financing mobilisation, and coordinated implementation across the region.",
+        text: "A defining milestone of Day Two was the formal launch of the Niger Delta Blue Economy Roadmap and the Niger Delta Blue Economy Development Fund. These instruments establish a structured framework for project prioritisation, financing mobilisation, and coordinated implementation across the region.",
       },
       {
         type: "paragraph",
-        text:
-          "The roadmap outlines strategic sector pathways, governance mechanisms, and investment priorities, while the development fund is designed to catalyse private-sector participation and blended financing for bankable blue economy projects.",
+        text: "The roadmap outlines strategic sector pathways, governance mechanisms, and investment priorities, while the development fund is designed to catalyse private-sector participation and blended financing for bankable blue economy projects.",
       },
       {
         type: "paragraph",
-        text:
-          "Together, they mark a transition from dialogue to execution—anchoring the Summit’s outcomes in actionable programmes capable of delivering jobs, enterprise growth, environmental protection, and sustainable coastal development.",
+        text: "Together, they mark a transition from dialogue to execution—anchoring the Summit’s outcomes in actionable programmes capable of delivering jobs, enterprise growth, environmental protection, and sustainable coastal development.",
       },
       {
         type: "heading",
@@ -317,18 +296,15 @@ const galleryIndustries = [
       },
       {
         type: "paragraph",
-        text:
-          "Closing reflections emphasised that the success of the Niger Delta blue economy agenda will ultimately be measured by tangible improvements in livelihoods, skills development, enterprise opportunities, and environmental resilience across coastal and riverine communities.",
+        text: "Closing reflections emphasised that the success of the Niger Delta blue economy agenda will ultimately be measured by tangible improvements in livelihoods, skills development, enterprise opportunities, and environmental resilience across coastal and riverine communities.",
       },
       {
         type: "paragraph",
-        text:
-          "With strengthened partnerships, clearer policy direction, and dedicated financing mechanisms now in place, stakeholders affirmed a shared commitment to advancing an inclusive, investment-ready blue economy that supports regional prosperity and national economic diversification.",
+        text: "With strengthened partnerships, clearer policy direction, and dedicated financing mechanisms now in place, stakeholders affirmed a shared commitment to advancing an inclusive, investment-ready blue economy that supports regional prosperity and national economic diversification.",
       },
       {
         type: "paragraph",
-        text:
-          "The Summit concluded with a collective call for sustained collaboration among government, industry, investors, and communities to translate the Niger Delta’s marine potential into lasting development outcomes.",
+        text: "The Summit concluded with a collective call for sustained collaboration among government, industry, investors, and communities to translate the Niger Delta’s marine potential into lasting development outcomes.",
       },
     ],
   },
@@ -347,38 +323,31 @@ const galleryIndustries = [
     content: [
       {
         type: "paragraph",
-        text:
-          "Here’s an overview of a growing partnership in Nigeria’s marine sector focused on safety and sustainability.",
+        text: "Here’s an overview of a growing partnership in Nigeria’s marine sector focused on safety and sustainability.",
       },
       {
         type: "paragraph",
-        text:
-          "The Niger Delta Blue Economy Investment Summit has formed a strategic partnership with Caverton Marine to improve marine transport safety and sustainability across the Niger Delta.",
+        text: "The Niger Delta Blue Economy Investment Summit has formed a strategic partnership with Caverton Marine to improve marine transport safety and sustainability across the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "The collaboration was announced after a high-level meeting in Lagos between the Summit’s organising committee and Caverton Marine leadership. The goal is to address ongoing safety challenges on the region’s waterways while promoting the use of modern, low-emission passenger vessels.",
+        text: "The collaboration was announced after a high-level meeting in Lagos between the Summit’s organising committee and Caverton Marine leadership. The goal is to address ongoing safety challenges on the region’s waterways while promoting the use of modern, low-emission passenger vessels.",
       },
       {
         type: "paragraph",
-        text:
-          "Caverton Marine — an indigenous company known for advancing water transport services through public-private initiatives like ferry projects in Lagos — is expected to bring its expertise to help strengthen standards and operations in the Niger Delta.",
+        text: "Caverton Marine — an indigenous company known for advancing water transport services through public-private initiatives like ferry projects in Lagos — is expected to bring its expertise to help strengthen standards and operations in the Niger Delta.",
       },
       {
         type: "paragraph",
-        text:
-          "According to Cedric Ogwu of the Summit committee, the partnership seeks to replicate successful marine transport models seen in other Nigerian states, especially where water travel is essential.",
+        text: "According to Cedric Ogwu of the Summit committee, the partnership seeks to replicate successful marine transport models seen in other Nigerian states, especially where water travel is essential.",
       },
       {
         type: "paragraph",
-        text:
-          "The Summit will take place from February 9 to 11 at the Four Points by Sheraton Hotel in Ikot-Ekpene, Akwa Ibom State, convening government officials, investors, industry leaders and development partners to unlock investment opportunities across the region’s blue economy.",
+        text: "The Summit will take place from February 9 to 11 at the Four Points by Sheraton Hotel in Ikot-Ekpene, Akwa Ibom State, convening government officials, investors, industry leaders and development partners to unlock investment opportunities across the region’s blue economy.",
       },
       {
         type: "paragraph",
-        text:
-          "High-profile speakers, including former Prime Minister of Tunisia Mehdi Jomaa, are set to attend.",
+        text: "High-profile speakers, including former Prime Minister of Tunisia Mehdi Jomaa, are set to attend.",
       },
     ],
   },
@@ -447,8 +416,11 @@ export default function Home() {
   const galleryCleanupRef = useRef(null);
   const serviceGalleryEight = useRef(null);
   const sliderTimeoutsRef = useRef([]);
-  const [isContentPageOverlayOpen, setIsContentPageOverlayOpen] = useState(false);
-  const [activePostId, setActivePostId] = useState(galleryIndustries[0]?.id ?? null);
+  const [isContentPageOverlayOpen, setIsContentPageOverlayOpen] =
+    useState(false);
+  const [activePostId, setActivePostId] = useState(
+    galleryIndustries[0]?.id ?? null,
+  );
 
   const visible = useMemo(
     () => getVisibleSliderItems(sliderStartIndex),
@@ -1273,6 +1245,20 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="Container Gap-XL">
+              <div className="ApplicationSectionColorHeader">
+                <span>Watch This</span>
+                <h2>Niger Delta Blue Economy Investment Summit</h2>
+              </div>
+              <iframe
+                src="https://www.youtube.com/embed/xDUMnNoGql4"
+                title="Niger Delta Blue Economy Summit"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ width: "100%", height: "600px", border: "none" }}
+              ></iframe>
+            </section>
+
             <section
               className="White-Background"
               id="CarouselAnimation"
@@ -1402,21 +1388,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="Container Gap-XL">
-              <div className="ApplicationSectionColorHeader">
-                <span>Watch This</span>
-                <h2>Niger Delta Blue Economy Investment Summit</h2>
-              </div>
-              <iframe
-                src="https://www.youtube.com/embed/xDUMnNoGql4"
-                title="Niger Delta Blue Economy Summit"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ width: "100%", height: "600px", border: "none" }}
-              ></iframe>
-            </section>
-
-            <section className="White-Background Container">
+            <section className="White-Background Container ApplicationBannerContainer">
               <div className="ApplicationBanner">
                 <img
                   src="https://res.cloudinary.com/renaissance-images/image/upload/v1775604123/QuinnDaisies/future-visions-business-technology-concept_ehpo8p.jpg"
@@ -1488,7 +1460,11 @@ export default function Home() {
               <div className="PostContentOverlayBody">
                 {activePost.content.map((block, index) => {
                   if (block.type === "heading") {
-                    return <h3 key={activePost.id + "-heading-" + index}>{block.text}</h3>;
+                    return (
+                      <h3 key={activePost.id + "-heading-" + index}>
+                        {block.text}
+                      </h3>
+                    );
                   }
 
                   if (block.type === "image") {
@@ -1510,7 +1486,11 @@ export default function Home() {
                     );
                   }
 
-                  return <p key={activePost.id + "-paragraph-" + index}>{block.text}</p>;
+                  return (
+                    <p key={activePost.id + "-paragraph-" + index}>
+                      {block.text}
+                    </p>
+                  );
                 })}
               </div>
 
@@ -1522,7 +1502,9 @@ export default function Home() {
                   className="ApplicationButton PostContentOverlaySource"
                 >
                   <p>Read Original Article</p>
-                  <span className="material-symbols-outlined">arrow_outward</span>
+                  <span className="material-symbols-outlined">
+                    arrow_outward
+                  </span>
                 </a>
               )}
             </article>
