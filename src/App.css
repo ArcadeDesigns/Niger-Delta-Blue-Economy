@@ -1241,7 +1241,7 @@ nav .NavlinkItem {
 }
 
 .ApplicationChartDesignItem h4 {
-  color: var(--tertiary-color);
+  color: var(--tertiary-on-color);
   transition: color 0.25s ease;
 }
 
@@ -1256,7 +1256,7 @@ nav .NavlinkItem {
 }
 
 .ApplicationChartDesignItem.is-active h4 {
-  color: var(--tertiary-color);
+  color: var(--tertiary-on-color);
 }
 
 .ApplicationChartContent {
@@ -1313,7 +1313,7 @@ nav .NavlinkItem {
 
 .ApplicationChartContentContainerContent
   .ApplicationChartContentContainerContentText {
-  color: var(--tertiary-color);
+  color: var(--primary-color);
   text-align: center;
 }
 
