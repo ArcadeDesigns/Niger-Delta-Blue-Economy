@@ -738,20 +738,23 @@ nav .NavlinkItem {
   margin-left: 1%;
 }
 
-.Footer {
-  background-color: var(--tertiary-on-color);
-}
-
 .ApplicationFooter {
   width: 100%;
-  height: auto;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 5em;
-  margin: auto;
+  margin: 0 auto;
   padding: 5% 10%;
+  background:
+    linear-gradient(rgba(0, 160, 189, 0.2), rgba(0, 160, 189, 0.2)),
+    url("../src/assets/oceanfloor.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .ApplicationFooterBox {
@@ -2057,7 +2060,6 @@ button.ApplicationButton {
   display: none;
 }
 
-
 .PostContentOverlayClose {
   position: fixed;
   top: 24px;
@@ -2130,11 +2132,11 @@ button.ApplicationButton {
 }
 
 .PostContentOverlayBody h3 {
- color: var(--tertiary-color);
+  color: var(--tertiary-color);
 }
 
 .PostContentOverlayBody p {
- color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .PostContentOverlayImagePlaceholder {
@@ -2301,7 +2303,13 @@ button.ApplicationButton {
     top: 0;
     left: 0;
     position: fixed;
-    background-color: var(--tertiary-on-color);
+    background:
+      linear-gradient(rgba(0, 160, 189, 0.2), rgba(0, 160, 189, 0.2)),
+      url("../src/assets/oceanfloor.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
@@ -2397,7 +2405,13 @@ button.ApplicationButton {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--tertiary-on-color);
+    background:
+      linear-gradient(rgba(0, 160, 189, 0.2), rgba(0, 160, 189, 0.2)),
+      url("../src/assets/oceanfloor.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .responsiveMenuListContainer li {
