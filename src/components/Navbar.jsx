@@ -24,7 +24,7 @@ export default function Navbar() {
   const isAboutActive = hash === "#about";
   const isIndustryActive = hash === "#industries";
   const isBlogActive = hash === "#blogpost";
-  const isLeadershipActive = hash === "#leadership";
+  {/* const isLeadershipActive = hash === "#leadership"; */}
 
   const toggleMenu = () => setMenuOpen((current) => !current);
   const closeMenu = () => setMenuOpen(false);

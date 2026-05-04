@@ -903,7 +903,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="Container ServicesInformation" id="about">
+            <section className="WhiteSeaBackground Container ServicesInformation" id="about">
               <span>About the Summit</span>
               <h4>
                 The Niger Delta Blue Economy Investment Summit is a premier,
@@ -1064,7 +1064,7 @@ export default function Home() {
             </section>
 
             <section
-              className="White-Background ApplicationImageDesign"
+              className="WhiteSeaBackground White-Background ApplicationImageDesign"
               ref={imagePinRef}
               id="industries"
             >
@@ -1184,7 +1184,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="White-Background Container Gap-XL">
+            <section className="WhiteSeaBackground White-Background Container Gap-XL">
               <div className="Flex Gap-XL">
                 <div className="Column ApplicationFlexWidth">
                   <div className="ApplicationSectionColorHeader">

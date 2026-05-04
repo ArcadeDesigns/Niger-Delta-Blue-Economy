@@ -40,6 +40,7 @@ body {
   overflow-x: hidden !important;
   position: relative;
   width: 100%;
+  background-color: var(--primary-color);
 }
 
 body,
@@ -343,6 +344,35 @@ nav .NavlinkItem {
   margin: auto 0;
   padding: 5% 10%;
   gap: 2em;
+}
+
+.WavyDesign {
+  clip-path: shape(
+    from 0 0,
+    vline to calc(100% - 50px),
+    curve to 7.14% calc(100% - 55.5px) with 4.76% calc(100% - 27px),
+    curve to 11.9% calc(100% - 86px) with 9.52% calc(100% - 84px),
+    curve to 16.67% calc(100% - 73px) with 14.29% calc(100% - 88px),
+    curve to 21.43% calc(100% - 44px) with 19.05% calc(100% - 58px),
+    curve to 26.19% calc(100% - 55.5px) with 23.81% calc(100% - 30px),
+    curve to 30.95% calc(100% - 80px) with 28.57% calc(100% - 81px),
+    curve to 35.71% calc(100% - 88px) with 33.33% calc(100% - 79px),
+    curve to 40.48% calc(100% - 58px) with 38.1% calc(100% - 97px),
+    curve to 45.24% calc(100% - 13.5px) with 42.86% calc(100% - 19px),
+    curve to 50% calc(100% - 27px) with 47.62% calc(100% - 8px),
+    curve to 54.76% calc(100% - 26px) with 52.38% calc(100% - 46px),
+    curve to 59.52% calc(100% - 11px) with 57.14% calc(100% - 6px),
+    curve to 64.29% calc(100% - 49px) with 61.9% calc(100% - 16px),
+    curve to 69.05% calc(100% - 57px) with 66.67% calc(100% - 82px),
+    curve to 73.81% calc(100% - 44px) with 71.43% calc(100% - 32px),
+    curve to 78.57% calc(100% - 46.5px) with 76.19% calc(100% - 56px),
+    curve to 83.33% calc(100% - 36.5px) with 80.95% calc(100% - 37px),
+    curve to 88.1% calc(100% - 64px) with 85.71% calc(100% - 36px),
+    curve to 92.86% calc(100% - 80.5px) with 90.48% calc(100% - 92px),
+    curve to 100% calc(100% - 50px) with 95.24% calc(100% - 69px),
+    vline to 0,
+    hline to 0
+  );
 }
 
 .HeroOverlayContent {
@@ -751,6 +781,26 @@ nav .NavlinkItem {
   background:
     linear-gradient(rgba(0, 160, 189, 0.2), rgba(0, 160, 189, 0.2)),
     url("../src/assets/oceanfloor.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.WhiteSeaBackground {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../src/assets/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.DarkSeaBackground {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("../src/assets/background.jpg");
 
   background-size: cover;
   background-position: center;
@@ -1223,7 +1273,7 @@ nav .NavlinkItem {
 
 .ApplicationChartContentListHeader {
   width: 60%;
-  color: var(--tertiary-color);
+  color: var(--tertiary-on-color);
   margin-bottom: 10%;
 }
 
@@ -2685,6 +2735,10 @@ button.ApplicationButton {
     height: 100%;
     max-width: 100%;
     max-height: 100%;
+  }
+
+  .responsiveMenuListContainer {
+    border-radius: 0px;
   }
 }
 
