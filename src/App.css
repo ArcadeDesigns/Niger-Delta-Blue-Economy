@@ -43,6 +43,53 @@ body {
   background-color: var(--primary-color);
 }
 
+.WaveLocation {
+  z-index: 1;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.custom-shape-divider-bottom-1777979675 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1777979675 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 250px;
+}
+
+.custom-shape-divider-bottom-1777979675 .shape-fill {
+  fill: #00a0bd;
+}
+
+.custom-shape-divider-top-1777979725 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1777979725 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 250px;
+}
+
+.custom-shape-divider-top-1777979725 .shape-fill {
+  fill: #00a0bd;
+}
+
 body,
 html {
   overflow-x: hidden;
@@ -263,6 +310,7 @@ nav .NavlinkItem {
 
 .White-Background {
   background-color: var(--primary-color);
+  position: relative;
 }
 
 .Gap-XL {
@@ -656,6 +704,7 @@ nav .NavlinkItem {
   border-radius: 25px;
   gap: 1em;
   will-change: transform;
+  z-index: 999;
 }
 
 .ApplicationBox img {
@@ -1166,6 +1215,7 @@ nav .NavlinkItem {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: auto;
+    z-index: 900;
 }
 
 .ApplicationBoxSmall {
@@ -1561,6 +1611,7 @@ nav .NavlinkItem {
   gap: 2em;
   flex-direction: column;
   background-color: var(--primary-color);
+  position: relative;
 }
 
 .ServicesInformation span {
